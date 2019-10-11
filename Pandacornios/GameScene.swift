@@ -52,7 +52,7 @@ class GameScene: SKScene {
         let frontTouchedNode = self.atPoint(location)
 
         if (frontTouchedNode.name == "vaso") {
-            let newScene = NewScene(size: self.size)
+            let newScene = Genius(size: self.size)
                            
             let doorsClose = SKTransition.doorsCloseVertical(withDuration: 1.0)
             view?.presentScene(newScene, transition: doorsClose)
