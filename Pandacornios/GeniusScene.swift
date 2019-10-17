@@ -11,17 +11,25 @@ import GameplayKit
 import AVKit
 
 class GeniusScene: SKScene {
+    // Atlas
+    var redRetangleAtlas: SKTextureAtlas = SKTextureAtlas(named: "redRetangle")
+    var yellowRetangleAtlas: SKTextureAtlas = SKTextureAtlas(named: "yellowRetangle")
+    var greenRetangleAtlas: SKTextureAtlas = SKTextureAtlas(named: "greenRetangle")
+    var blueRetangleAtlas: SKTextureAtlas = SKTextureAtlas(named: "blueRetangle")
+
+    // Nodes
     var redRetangleOff: SKSpriteNode = SKSpriteNode(imageNamed: "redRetangleOff")
     var yellowRetangleOff: SKSpriteNode = SKSpriteNode(imageNamed: "yellowRetangleOff")
     var greenRetangleOff: SKSpriteNode = SKSpriteNode(imageNamed: "greenRetangleOff")
     var blueRetangleOff: SKSpriteNode = SKSpriteNode(imageNamed: "blueRetangleOff")
     var buttonPlay: SKSpriteNode = SKSpriteNode(imageNamed: "coin_00")
 
+    // Arrays
     var buttonsOptions: [SKSpriteNode] = []
     var gameSequel: [SKSpriteNode] = []
     var playerSequel: [SKSpriteNode] = []
 
-//    Quando a cena carregar, você faz isso:
+    //Quando a cena carregar, você faz isso:
     override func sceneDidLoad() {
 
         self.setUpRedRetangelOff()
@@ -70,19 +78,14 @@ class GeniusScene: SKScene {
 
     func playGame() {
         gameSequel = []
-        var firstElemnt = buttonsOptions.randomElement()
-        gameSequel.append(firstElemnt!)
+        var elementOfTheSequel = buttonsOptions.randomElement()
+        gameSequel.append(elementOfTheSequel!)
 
     }
 
-    func playSequel(){
-        let action = SKAction.anima
+    func playSequel() {
+        SKAction.animate(with: <#T##[SKTexture]#>, timePerFrame: <#T##TimeInterval#>)
     }
-
-
-
-
-
 
 // Se o toque começou
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
