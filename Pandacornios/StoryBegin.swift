@@ -41,8 +41,6 @@ class StoryBegin: SKScene {
         firstImage.size = CGSize (width: size.width * 2, height: size.height * 2)
         firstImage.zPosition = -1
     }
-    
-    
 
 override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     guard let touch = touches.first else {
