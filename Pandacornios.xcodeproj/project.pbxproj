@@ -48,7 +48,6 @@
 		6FCA38AD234E488E005A239D = {
 			isa = PBXGroup;
 			children = (
-				6FDE81B2235CC400001294F5 /* Story */,
 				6FCA38B8234E488E005A239D /* Pandacornios */,
 				6FCA38B7234E488E005A239D /* Products */,
 			);
@@ -78,13 +77,6 @@
 				6FCA38CB234E4892005A239D /* Info.plist */,
 			);
 			path = Pandacornios;
-			sourceTree = "<group>";
-		};
-		6FDE81B2235CC400001294F5 /* Story */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Story;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
