@@ -11,10 +11,9 @@ import GameplayKit
 
 class StoryBegin: SKScene {
     
-    var buttonBack : SKSpriteNode = SKSpriteNode(imageNamed: "blueRetangleOff")
-    var buttonFoward: SKSpriteNode = SKSpriteNode(imageNamed: "blueRetangleOn")
-    var firstImage: SKSpriteNode = SKSpriteNode(imageNamed: "redRetangleOn")
-    var secondImage: SKSpriteNode = SKSpriteNode(imageNamed: "redRetangleOff")
+    var buttonBack : SKSpriteNode = SKSpriteNode(imageNamed: "vaso")
+    var buttonFoward: SKSpriteNode = SKSpriteNode(imageNamed: "vaso")
+    var firstImage: SKSpriteNode = SKSpriteNode(imageNamed: "vaso")
     
     override func sceneDidLoad() {
         self.buttonBackSetUp()
