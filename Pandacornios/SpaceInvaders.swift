@@ -511,7 +511,6 @@ class SpaceInvaders: SKScene, SKPhysicsContactDelegate {
           andSoundFileName: "ShipBullet.wav"
         )
         } else {
-            GameOverScene()
             print("tela de game over")
         }
     }
@@ -631,7 +630,7 @@ class SpaceInvaders: SKScene, SKPhysicsContactDelegate {
       gameEnding = true
       
       // 2
-      let gameOverScene: GameOverScene = GameOverScene(size: size)
+      let gameOverScene: GameOverSceneSpace = GameOverSceneSpace(size: size)
       
       view?.presentScene(gameOverScene, transition: SKTransition.doorsOpenHorizontal(withDuration: 1.0))
     }
