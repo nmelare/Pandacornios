@@ -9,7 +9,7 @@
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene {
+class SnakeGame: SKScene {
     
     var vase: SKSpriteNode = SKSpriteNode(imageNamed: "vaso")
     
@@ -49,10 +49,11 @@ class GameScene: SKScene {
         print(location)
         
         let touchedNodes = nodes(at: location)
+
         let frontTouchedNode = self.atPoint(location)
 
         if (frontTouchedNode.name == "vaso") {
-            let newScene = NewScene(size: self.size)
+            let newScene = GeniusScene(size: self.size)
                            
             let doorsClose = SKTransition.doorsCloseVertical(withDuration: 1.0)
             view?.presentScene(newScene, transition: doorsClose)
