@@ -11,11 +11,11 @@ import GameplayKit
 
 class InicialScreen: SKScene {
     
-    var vase: SKSpriteNode = SKSpriteNode(imageNamed: "vaso")
+    var background: SKSpriteNode = SKSpriteNode(imageNamed: "Background")
     
     override func sceneDidLoad() {
         self.physicsVase()
-        backgroundColor =  #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
+
     }
 //    override func didMove(to view: SKView) {
 //        self.physicsVase()
@@ -23,12 +23,13 @@ class InicialScreen: SKScene {
 //        }
         
     func physicsVase() {
-        self.addChild(vase)
-        print(vase.position)
-        vase.name = "vaso"
-        vase.size = CGSize (width: size.width * 0.15, height: size.height * 0.06)
-        vase.position = CGPoint(x: size.width/2,   y: size.height/2)
-        vase.isUserInteractionEnabled = false
+        self.addChild(background)
+        print(background.position)
+        background.name = "Background"
+        background.size = CGSize (width: size.height * 1, height: size.width * 1)
+        background.position = CGPoint(x: size.width/2, y: size.height/2)
+        background.zRotation = (.pi / 2)
+        background.isUserInteractionEnabled = false
     }
     
     override var isUserInteractionEnabled: Bool {

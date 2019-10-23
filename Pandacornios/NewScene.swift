@@ -30,7 +30,7 @@ class NewScene: SKScene {
             
             let location = touch.location(in: self)
             
-            let touchedNodes = nodes(at: location)
+//            let touchedNodes = nodes(at: location)
             let frontTouchedNode = self.atPoint(location)
         
         if (frontTouchedNode.name == "goBackLabel") {
