@@ -154,8 +154,6 @@ class GeniusScene: SKScene {
         }
         // MARK: Conditional of Player's Turn
         if playerTurn == true {
-            print("cheguei")
-            print(frontTouchedNode)
             if buttonsOptions.contains(frontTouchedNode) {
 
                 playerTurn = false
