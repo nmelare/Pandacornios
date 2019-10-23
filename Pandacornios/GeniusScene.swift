@@ -11,100 +11,91 @@ import GameplayKit
 import AVKit
 
 class GeniusScene: SKScene {
-
-    var toque = 0
-
+    // MARK: Outlets
+    // Player
+    var playerTouch = 0
     var playerTurn: Bool = false
+
     // Atlas
-    var redRetangleAtlas: SKTextureAtlas = SKTextureAtlas(named: "redButton")
-    var yellowRetangleAtlas: SKTextureAtlas = SKTextureAtlas(named: "yellowButton")
-    var greenRetangleAtlas: SKTextureAtlas = SKTextureAtlas(named: "greenButton")
-    var blueRetangleAtlas: SKTextureAtlas = SKTextureAtlas(named: "blueButton")
+    var redButtonAtlas: SKTextureAtlas = SKTextureAtlas(named: "redButton")
+    var yellowButtonAtlas: SKTextureAtlas = SKTextureAtlas(named: "yellowButton")
+    var greenButtonAtlas: SKTextureAtlas = SKTextureAtlas(named: "greenButton")
+    var blueButtonAtlas: SKTextureAtlas = SKTextureAtlas(named: "blueButton")
 
     // Nodes
-    var redRetangleOff: SKSpriteNode = SKSpriteNode(imageNamed: "redButton")
-    var yellowRetangleOff: SKSpriteNode = SKSpriteNode(imageNamed: "yellowButton")
-    var greenRetangleOff: SKSpriteNode = SKSpriteNode(imageNamed: "greenButton")
-    var blueRetangleOff: SKSpriteNode = SKSpriteNode(imageNamed: "blueButton")
-    var buttonPlay: SKSpriteNode = SKSpriteNode(imageNamed: "play_button")
+    var redButtonOff: SKSpriteNode = SKSpriteNode(imageNamed: "redButton")
+    var yellowButtonOff: SKSpriteNode = SKSpriteNode(imageNamed: "yellowButton")
+    var greenButtonOff: SKSpriteNode = SKSpriteNode(imageNamed: "greenButton")
+    var blueButtonOff: SKSpriteNode = SKSpriteNode(imageNamed: "blueButton")
+    var playButton: SKSpriteNode = SKSpriteNode(imageNamed: "play_button")
 
     // Arrays
     var buttonsOptions: [SKSpriteNode] = []
     var gameSequel: [SKSpriteNode] = []
     var playerSequel: [SKSpriteNode] = []
 
-    //Quando a cena carregar, você faz isso:
+    // MARK: scineDidLoad
     override func sceneDidLoad() {
 
-        self.setUpRedRetangelOff()
-        self.setUpBlueRetangelOff()
-        self.setUpGreenRetangelOff()
-        self.setUpYellowRetangelOff()
+        self.setUpRedButtonOff()
+        self.setUpBlueButtonOff()
+        self.setUpGreenButtonOff()
+        self.setUpYellowButtonOff()
         self.setUpPlayButton()
 
-        self.buttonsOptions = [blueRetangleOff, redRetangleOff, yellowRetangleOff, greenRetangleOff]
+        self.buttonsOptions = [blueButtonOff, redButtonOff, yellowButtonOff, greenButtonOff]
+    }
+    // MARK: Set Up Button
+    func setUpRedButtonOff() {
+        self.addChild(redButtonOff)
+        redButtonOff.position = CGPoint(x: size.width * 0.72, y: size.height * 0.67)
+        redButtonOff.size = CGSize(width: size.width * 0.42, height: size.height * 0.23)
+        redButtonOff.name = "RedButton"
     }
 
-    func setUpRedRetangelOff() {
-        self.addChild(redRetangleOff)
-        redRetangleOff.position = CGPoint(x: size.width * 0.72, y: size.height * 0.67)
-        redRetangleOff.size = CGSize(width: size.width * 0.42, height: size.height * 0.23)
-        redRetangleOff.name = "RedButton"
+    func setUpYellowButtonOff() {
+        self.addChild(yellowButtonOff)
+        yellowButtonOff.position = CGPoint(x: size.width * 0.3, y: size.height * 0.45)
+        yellowButtonOff.size = CGSize(width: size.width * 0.42, height: size.height * 0.23)
+        yellowButtonOff.name = "YellowButton"
     }
 
-    func setUpYellowRetangelOff() {
-        self.addChild(yellowRetangleOff)
-        yellowRetangleOff.position = CGPoint(x: size.width * 0.3, y: size.height * 0.45)
-        yellowRetangleOff.size = CGSize(width: size.width * 0.42, height: size.height * 0.23)
-        yellowRetangleOff.name = "YellowButton"
+    func setUpGreenButtonOff() {
+        self.addChild(greenButtonOff)
+        greenButtonOff.position = CGPoint(x: size.width * 0.3, y: size.height * 0.67)
+        greenButtonOff.size = CGSize(width: size.width * 0.42, height: size.height * 0.23)
+        greenButtonOff.name = "GreenButton"
     }
 
-    func setUpGreenRetangelOff() {
-        self.addChild(greenRetangleOff)
-        greenRetangleOff.position = CGPoint(x: size.width * 0.3, y: size.height * 0.67)
-        greenRetangleOff.size = CGSize(width: size.width * 0.42, height: size.height * 0.23)
-        greenRetangleOff.name = "GreenButton"
-    }
-
-    func setUpBlueRetangelOff() {
-        self.addChild(blueRetangleOff)
-        blueRetangleOff.position = CGPoint(x: size.width * 0.72, y: size.height * 0.45)
-        blueRetangleOff.size = CGSize(width: size.width * 0.42, height: size.height * 0.23)
-        blueRetangleOff.name = "BlueButton"
+    func setUpBlueButtonOff() {
+        self.addChild(blueButtonOff)
+        blueButtonOff.position = CGPoint(x: size.width * 0.72, y: size.height * 0.45)
+        blueButtonOff.size = CGSize(width: size.width * 0.42, height: size.height * 0.23)
+        blueButtonOff.name = "BlueButton"
     }
 
     func setUpPlayButton() {
-        self.addChild(buttonPlay)
-        buttonPlay.position = CGPoint(x: size.width * 0.55, y: size.height * 0.56)
-        buttonPlay.size = CGSize(width: size.width / 7, height: size.height / 10)
-        buttonPlay.name = "PlayButton"
+        self.addChild(playButton)
+        playButton.position = CGPoint(x: size.width * 0.55, y: size.height * 0.56)
+        playButton.size = CGSize(width: size.width / 7, height: size.height / 10)
+        playButton.name = "PlayButton"
     }
-
-    //    override var isUserInteractionEnabled: Bool {
-    //        get {
-    //            return false
-    //        }
-    //        set { // quando ignoramos o toque
-    //
-    //        }
-    //    }
-
+    // MARK: Funcions
     func playGame() {
         let elementOfTheSequel = buttonsOptions.randomElement()
         gameSequel.append(elementOfTheSequel!)
-
     }
-
-    func animate(animatedRetangles: [SKSpriteNode], completion: @escaping () -> Void) {
+    // MARK: Animate Funcions
+    func animate(animatedButtons: [SKSpriteNode], completion: @escaping () -> Void) {
         var actionList:[SKAction] = []
-        for rect in animatedRetangles {
-            var atlas = redRetangleAtlas
+        for rect in animatedButtons {
+            var atlas = redButtonAtlas
             if rect.name == "GreenButton"{
-                atlas = greenRetangleAtlas
+                atlas = greenButtonAtlas
             } else if rect.name == "BlueButton"{
-                atlas = blueRetangleAtlas
+                atlas = blueButtonAtlas
             } else if rect.name == "YellowButton"{
-                atlas = yellowRetangleAtlas
+                atlas = yellowButtonAtlas
             }
 
             let textureOfRetangles:[SKTexture] = loadFrames(atlas)
@@ -114,7 +105,6 @@ class GeniusScene: SKScene {
         run(SKAction.sequence(actionList), completion: completion)
 
     }
-
 
     func loadFrames(_ textureAtlas: SKTextureAtlas) -> [SKTexture] {
 
@@ -130,13 +120,13 @@ class GeniusScene: SKScene {
     }
 
     func animateSequel() {
-        self.animate(animatedRetangles: gameSequel) {
+        self.animate(animatedButtons: gameSequel) {
             self.playerTurn = true
-            self.toque = 0
+            self.playerTouch = 0
             self.resetPlayerGameSequel()
         }
     }
-
+    //MARK: Reset Funcions
     func resetGame() {
         gameSequel = []
         playerSequel = []
@@ -145,7 +135,7 @@ class GeniusScene: SKScene {
     func resetPlayerGameSequel() {
         playerSequel = []
     }
-    // Se o toque começou
+    // MARK: Touches Funcions
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first
             else {
@@ -162,54 +152,36 @@ class GeniusScene: SKScene {
             self.animateSequel()
             return
         }
-
+        // MARK: Conditional of Player's Turn
         if playerTurn == true {
             print("cheguei")
             print(frontTouchedNode)
             if buttonsOptions.contains(frontTouchedNode) {
-                //                print("entou no if")
-                //                if frontTouchedNode.name == "RedButton" {
-                //                    animate(animatedRetangles: [redRetangleOff])
-                //                    print("tocou no vermelho")
-                //                }
-                //                if frontTouchedNode.name == "BlueButton" {
-                //                    animate(animatedRetangles: [blueRetangleOff])
-                //                    print("tocou no azul")
-                //                }
-                //                if frontTouchedNode.name == "YellowButton" {
-                //                    animate(animatedRetangles: [yellowRetangleOff])
-                //                    print("tocou no amarelo")
-                //                }
-                //                if frontTouchedNode.name == "GreenButton" {
-                //                    animate(animatedRetangles: [greenRetangleOff])
-                //                    print("tocou no verde")
-                //                }
+
                 playerTurn = false
-                animate(animatedRetangles: [frontTouchedNode]) {
+                animate(animatedButtons: [frontTouchedNode]) {
                     self.playerTurn = true
                     self.playerSequel.append(frontTouchedNode)
 
-                    if self.playerSequel[self.toque] == self.gameSequel[self.toque] {
-                        if self.toque == self.gameSequel.count-1 {
+                    if self.playerSequel[self.playerTouch] == self.gameSequel[self.playerTouch] {
+                        if self.playerTouch == self.gameSequel.count-1 {
                             self.playerTurn = false
                             self.playGame()
                             self.animateSequel()
                             return
                         }
-                        self.toque += 1
+                        self.playerTouch += 1
                     } else {
-                        //                    som de perdeu
+                        self.animate(animatedButtons: [self.redButtonOff], completion: {})
+                        self.animate(animatedButtons: [self.blueButtonOff], completion: {})
+                        self.animate(animatedButtons: [self.greenButtonOff], completion: {})
+                        self.animate(animatedButtons: [self.yellowButtonOff], completion: {})
                         self.resetPlayerGameSequel()
                         self.resetGame()
-                        print("zerou tudo")
                     }
                 }
 
             }
-            //        } else {
-            //            isUserInteractionEnabled = false
-            //            print("o toque é falso")
-            //            self.animateSequel()
         }
 
     }
