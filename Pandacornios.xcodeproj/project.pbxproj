@@ -19,10 +19,18 @@
 		6FCA38CA234E4892005A239D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FCA38C8234E4892005A239D /* LaunchScreen.storyboard */; };
 		6FCA38D2234E52FE005A239D /* NewScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCA38D1234E52FE005A239D /* NewScene.swift */; };
 		6FDE81B1235CC38D001294F5 /* StoryBegin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDE81B0235CC38D001294F5 /* StoryBegin.swift */; };
+
+		759B0EC12360BECB00399888 /* StoryScene2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759B0EC02360BECB00399888 /* StoryScene2.swift */; };
+		759B0EC32360BF2B00399888 /* StoryScene3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759B0EC22360BF2B00399888 /* StoryScene3.swift */; };
+		759B0EC52360BF6C00399888 /* StoryScene4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759B0EC42360BF6C00399888 /* StoryScene4.swift */; };
+		759B0EC72360C03400399888 /* StoryScene5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759B0EC62360C03400399888 /* StoryScene5.swift */; };
+		759B0EC92360C06500399888 /* StoryScene6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759B0EC82360C06500399888 /* StoryScene6.swift */; };
+
 		E099B6472360D11100EDEC90 /* SpaceInvaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = E099B6462360D11100EDEC90 /* SpaceInvaders.swift */; };
 		E099B6532360DD3500EDEC90 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E099B6522360DD3500EDEC90 /* GameOverScene.swift */; };
 		E099B6552360DE3E00EDEC90 /* ManagerGameSnake.swift in Sources */ = {isa = PBXBuildFile; fileRef = E099B6542360DE3E00EDEC90 /* ManagerGameSnake.swift */; };
 		E099B6572360DE7200EDEC90 /* GameSnake.swift in Sources */ = {isa = PBXBuildFile; fileRef = E099B6562360DE7200EDEC90 /* GameSnake.swift */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,10 +48,18 @@
 		6FCA38CB234E4892005A239D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6FCA38D1234E52FE005A239D /* NewScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewScene.swift; sourceTree = "<group>"; };
 		6FDE81B0235CC38D001294F5 /* StoryBegin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBegin.swift; sourceTree = "<group>"; };
+
+		759B0EC02360BECB00399888 /* StoryScene2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryScene2.swift; sourceTree = "<group>"; };
+		759B0EC22360BF2B00399888 /* StoryScene3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryScene3.swift; sourceTree = "<group>"; };
+		759B0EC42360BF6C00399888 /* StoryScene4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryScene4.swift; sourceTree = "<group>"; };
+		759B0EC62360C03400399888 /* StoryScene5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryScene5.swift; sourceTree = "<group>"; };
+		759B0EC82360C06500399888 /* StoryScene6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryScene6.swift; sourceTree = "<group>"; };
+
 		E099B6462360D11100EDEC90 /* SpaceInvaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceInvaders.swift; sourceTree = "<group>"; };
 		E099B6522360DD3500EDEC90 /* GameOverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		E099B6542360DE3E00EDEC90 /* ManagerGameSnake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerGameSnake.swift; sourceTree = SOURCE_ROOT; };
 		E099B6562360DE7200EDEC90 /* GameSnake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSnake.swift; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +76,6 @@
 		6FCA38AD234E488E005A239D = {
 			isa = PBXGroup;
 			children = (
-				6FDE81B2235CC400001294F5 /* Story */,
 				6FCA38B8234E488E005A239D /* Pandacornios */,
 				6FCA38B7234E488E005A239D /* Products */,
 			);
@@ -80,6 +95,11 @@
 				25C425A8234FB99D00B0FE94 /* GeniusScene.swift */,
 				25C425AA2350FDC500B0FE94 /* GeniusGame.swift */,
 				6FDE81B0235CC38D001294F5 /* StoryBegin.swift */,
+				759B0EC02360BECB00399888 /* StoryScene2.swift */,
+				759B0EC22360BF2B00399888 /* StoryScene3.swift */,
+				759B0EC42360BF6C00399888 /* StoryScene4.swift */,
+				759B0EC62360C03400399888 /* StoryScene5.swift */,
+				759B0EC82360C06500399888 /* StoryScene6.swift */,
 				E099B6462360D11100EDEC90 /* SpaceInvaders.swift */,
 				6FCA38B9234E488E005A239D /* AppDelegate.swift */,
 				6FCA38BB234E488E005A239D /* GameScene.sks */,
@@ -96,13 +116,6 @@
 				6FCA38CB234E4892005A239D /* Info.plist */,
 			);
 			path = Pandacornios;
-			sourceTree = "<group>";
-		};
-		6FDE81B2235CC400001294F5 /* Story */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Story;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,14 +194,22 @@
 				E099B6552360DE3E00EDEC90 /* ManagerGameSnake.swift in Sources */,
 				E099B6472360D11100EDEC90 /* SpaceInvaders.swift in Sources */,
 				6FDE81B1235CC38D001294F5 /* StoryBegin.swift in Sources */,
+
+				759B0EC92360C06500399888 /* StoryScene6.swift in Sources */,
+
 				E099B6572360DE7200EDEC90 /* GameSnake.swift in Sources */,
 				E099B6532360DD3500EDEC90 /* GameOverScene.swift in Sources */,
+
 				6FCA38D2234E52FE005A239D /* NewScene.swift in Sources */,
 				25C425A9234FB99D00B0FE94 /* GeniusScene.swift in Sources */,
 				25C425AB2350FDC500B0FE94 /* GeniusGame.swift in Sources */,
 				6FCA38C0234E488E005A239D /* GameScene.swift in Sources */,
 				6FCA38C2234E488E005A239D /* GameViewController.swift in Sources */,
 				6FCA38BA234E488E005A239D /* AppDelegate.swift in Sources */,
+				759B0EC72360C03400399888 /* StoryScene5.swift in Sources */,
+				759B0EC52360BF6C00399888 /* StoryScene4.swift in Sources */,
+				759B0EC12360BECB00399888 /* StoryScene2.swift in Sources */,
+				759B0EC32360BF2B00399888 /* StoryScene3.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

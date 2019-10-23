@@ -1,22 +1,32 @@
 //
-//  StoryBegin.swift
+//  StoryScene2.swift
 //  Pandacornios
 //
-//  Created by Nathalia Melare on 20/10/19.
+//  Created by Julia Santos on 23/10/19.
 //  Copyright © 2019 Nathalia Melare. All rights reserved.
 //
 
 import SpriteKit
 import GameplayKit
 
-class StoryBegin: SKScene {
+class StoryScene2: SKScene {
     
+    var buttonBack : SKSpriteNode = SKSpriteNode(imageNamed: "back_button")
     var buttonFoward: SKSpriteNode = SKSpriteNode(imageNamed: "foward_button")
-    var firstImage: SKSpriteNode = SKSpriteNode(imageNamed: "ilustracao_01")
+    var firstImage: SKSpriteNode = SKSpriteNode(imageNamed: "ilustracao_02")
     
     override func sceneDidLoad() {
+        self.buttonBackSetUp()
         self.buttonFowardSetUp()
         self.firstImageSetUp()
+    }
+    
+    func buttonBackSetUp() {
+        self.addChild(buttonBack)
+        buttonBack.name = "buttonBack"
+        buttonBack.position = CGPoint(x: size.width * 0.5, y: size.height * 0.1)
+        buttonBack.zRotation = (.pi/2)
+        buttonBack.isUserInteractionEnabled = false
     }
     
     func buttonFowardSetUp() {
@@ -26,7 +36,7 @@ class StoryBegin: SKScene {
         buttonFoward.zRotation = (.pi/2)
         buttonFoward.isUserInteractionEnabled = false
     }
-
+    
     func  firstImageSetUp() {
         self.addChild(firstImage)
         firstImage.size = CGSize(width: size.width * 1.3, height: size.height * 0.5)
@@ -44,9 +54,15 @@ override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     let frontTouchedNode = self.atPoint(location)
 
     if (frontTouchedNode.name == "buttonFoward") {
-        let newScene = StoryScene2(size: self.size)
+        let newScene = StoryScene3(size: self.size)
                        
         let pushTransition = SKTransition.push(with: SKTransitionDirection(rawValue: 1)!, duration: 1.0)
+        view?.presentScene(newScene, transition: pushTransition)
+    }
+    if (frontTouchedNode.name == "buttonBack") {
+        let newScene = StoryBegin(size: self.size)
+                       
+        let pushTransition = SKTransition.push(with: SKTransitionDirection(rawValue: 4)!, duration: 1.0)
         view?.presentScene(newScene, transition: pushTransition)
     }
 }
