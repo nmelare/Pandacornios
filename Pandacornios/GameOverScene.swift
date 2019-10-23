@@ -10,7 +10,7 @@ import UIKit
 import SpriteKit
 
 class GameOverScene: SKScene {
-    
+  
   var contentCreated = false
   
   override func didMove(to view: SKView) {
@@ -91,7 +91,7 @@ class GameOverScene: SKScene {
     if let name = touchedNode.name {
         if name == "btn" {
 
-            let gameScene = GameScene(size: self.size)
+            let gameScene = GameSnake(size: self.size)
             gameScene.scaleMode = .aspectFill
 
             self.view?.presentScene(gameScene)
@@ -100,10 +100,10 @@ class GameOverScene: SKScene {
 
           }
         if name == "btn2"{
-            let SpaceInvaders = GameScene(size: self.size)
-            SpaceInvaders.scaleMode = .aspectFill
+            let gameScene = GameSnake(size: self.size)
+            gameScene.scaleMode = .aspectFill
 
-            self.view?.presentScene(SpaceInvaders)
+            self.view?.presentScene(gameScene)
         }
       }
   }
@@ -125,3 +125,4 @@ class GameOverScene: SKScene {
   }
 
 }
+

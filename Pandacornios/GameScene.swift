@@ -9,7 +9,7 @@
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene {
+class SnakeGame: SKScene {
     
     var vase: SKSpriteNode = SKSpriteNode(imageNamed: "vaso")
     

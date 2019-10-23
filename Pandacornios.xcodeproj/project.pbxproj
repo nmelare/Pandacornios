@@ -18,7 +18,9 @@
 		6FCA38D2234E52FE005A239D /* NewScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCA38D1234E52FE005A239D /* NewScene.swift */; };
 		6FDE81B1235CC38D001294F5 /* StoryBegin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDE81B0235CC38D001294F5 /* StoryBegin.swift */; };
 		E099B6472360D11100EDEC90 /* SpaceInvaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = E099B6462360D11100EDEC90 /* SpaceInvaders.swift */; };
-		E099B6492360D23100EDEC90 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E099B6482360D23100EDEC90 /* GameOverScene.swift */; };
+		E099B6532360DD3500EDEC90 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E099B6522360DD3500EDEC90 /* GameOverScene.swift */; };
+		E099B6552360DE3E00EDEC90 /* ManagerGameSnake.swift in Sources */ = {isa = PBXBuildFile; fileRef = E099B6542360DE3E00EDEC90 /* ManagerGameSnake.swift */; };
+		E099B6572360DE7200EDEC90 /* GameSnake.swift in Sources */ = {isa = PBXBuildFile; fileRef = E099B6562360DE7200EDEC90 /* GameSnake.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +37,9 @@
 		6FCA38D1234E52FE005A239D /* NewScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewScene.swift; sourceTree = "<group>"; };
 		6FDE81B0235CC38D001294F5 /* StoryBegin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBegin.swift; sourceTree = "<group>"; };
 		E099B6462360D11100EDEC90 /* SpaceInvaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceInvaders.swift; sourceTree = "<group>"; };
-		E099B6482360D23100EDEC90 /* GameOverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
+		E099B6522360DD3500EDEC90 /* GameOverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
+		E099B6542360DE3E00EDEC90 /* ManagerGameSnake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerGameSnake.swift; sourceTree = SOURCE_ROOT; };
+		E099B6562360DE7200EDEC90 /* GameSnake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSnake.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,13 +75,15 @@
 			children = (
 				6FDE81B0235CC38D001294F5 /* StoryBegin.swift */,
 				E099B6462360D11100EDEC90 /* SpaceInvaders.swift */,
-				E099B6482360D23100EDEC90 /* GameOverScene.swift */,
 				6FCA38B9234E488E005A239D /* AppDelegate.swift */,
 				6FCA38BB234E488E005A239D /* GameScene.sks */,
 				6FCA38BD234E488E005A239D /* Actions.sks */,
 				6FCA38BF234E488E005A239D /* GameScene.swift */,
 				6FCA38D1234E52FE005A239D /* NewScene.swift */,
 				6FCA38C1234E488E005A239D /* GameViewController.swift */,
+				E099B6522360DD3500EDEC90 /* GameOverScene.swift */,
+				E099B6542360DE3E00EDEC90 /* ManagerGameSnake.swift */,
+				E099B6562360DE7200EDEC90 /* GameSnake.swift */,
 				6FCA38C3234E488E005A239D /* Main.storyboard */,
 				6FCA38C6234E4892005A239D /* Assets.xcassets */,
 				6FCA38C8234E4892005A239D /* LaunchScreen.storyboard */,
@@ -166,9 +172,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E099B6552360DE3E00EDEC90 /* ManagerGameSnake.swift in Sources */,
 				E099B6472360D11100EDEC90 /* SpaceInvaders.swift in Sources */,
 				6FDE81B1235CC38D001294F5 /* StoryBegin.swift in Sources */,
-				E099B6492360D23100EDEC90 /* GameOverScene.swift in Sources */,
+				E099B6572360DE7200EDEC90 /* GameSnake.swift in Sources */,
+				E099B6532360DD3500EDEC90 /* GameOverScene.swift in Sources */,
 				6FCA38D2234E52FE005A239D /* NewScene.swift in Sources */,
 				6FCA38C0234E488E005A239D /* GameScene.swift in Sources */,
 				6FCA38C2234E488E005A239D /* GameViewController.swift in Sources */,
