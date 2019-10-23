@@ -178,9 +178,7 @@ class GeniusScene: SKScene {
                         self.resetGame()
                     }
                 }
-
             }
         }
-
     }
 }
