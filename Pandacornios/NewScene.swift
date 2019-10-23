@@ -34,7 +34,7 @@ class NewScene: SKScene {
             let frontTouchedNode = self.atPoint(location)
         
         if (frontTouchedNode.name == "goBackLabel") {
-            let scene = GameScene(size: self.size)
+            let scene = GameSnake(size: self.size)
 
             let doorsOpen = SKTransition.doorsOpenVertical(withDuration: 1.0)
             view?.presentScene(scene, transition: doorsOpen)
