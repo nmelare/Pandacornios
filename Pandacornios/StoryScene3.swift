@@ -54,7 +54,7 @@ override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     let frontTouchedNode = self.atPoint(location)
 
     if (frontTouchedNode.name == "buttonFoward") {
-        let newScene = StoryScene4(size: self.size)
+        let newScene = InicialScreen(size: self.size)
                        
         let pushTransition = SKTransition.push(with: SKTransitionDirection(rawValue: 1)!, duration: 1.0)
         view?.presentScene(newScene, transition: pushTransition)
