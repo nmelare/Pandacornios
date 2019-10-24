@@ -61,7 +61,7 @@ class GameOverScene: SKScene {
     let labelReturnMain = SKLabelNode(fontNamed: "Galvji")
     labelReturnMain.fontSize = 17
     labelReturnMain.fontColor = SKColor.black
-    labelReturnMain.text = "Ir para a tela inicial"
+    labelReturnMain.text = "Voltar para o quarto"
     labelReturnMain.position = CGPoint(x: self.size.width/2, y: gameOverLabel.frame.origin.y - gameOverLabel.frame.size.height - 250);
     
     self.addChild(labelReturnMain)
@@ -100,7 +100,7 @@ class GameOverScene: SKScene {
 
           }
         if name == "btn2"{
-            let gameScene = GameSnake(size: self.size)
+            let gameScene = InicialScreen(size: self.size)
             gameScene.scaleMode = .aspectFill
 
             self.view?.presentScene(gameScene)
