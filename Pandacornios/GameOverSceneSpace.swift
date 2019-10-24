@@ -86,8 +86,6 @@ class GameOverSceneSpace: SKScene {
     let positionInScene = touch!.location(in: self)
     let touchedNode = self.atPoint(positionInScene)
 
-
-
     if let name = touchedNode.name {
         if name == "btn" {
 
@@ -102,25 +100,9 @@ class GameOverSceneSpace: SKScene {
             let gameScene = InicialScreen(size: self.size)
             gameScene.scaleMode = .aspectFill
 
-            self.view?.presentScene(gameScene)
+          self.view?.presentScene(gameScene,transition: SKTransition.doorsOpenVertical(withDuration: 1.0))
         }
       }
-  }
-    
-    
-    
-  
-  override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?)  {
-    
-  }
-  
-  override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-    
-  }
-  
-  override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?)  {
-
-    
   }
 
 }

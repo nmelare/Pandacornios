@@ -15,6 +15,7 @@ class InicialScreen: SKScene {
     var hiddenNodeGenius: SKSpriteNode = SKSpriteNode(imageNamed: "redRetangleOff")
     var hiddenNodeSnake: SKSpriteNode = SKSpriteNode(imageNamed: "redRetangleOff")
     var hiddenNodeSpaceInvaders: SKSpriteNode = SKSpriteNode(imageNamed: "redRetangleOff")
+    var touchOnGames: Int = 0
     
     override func sceneDidLoad() {
         self.backgroundSetUp()
@@ -66,24 +67,34 @@ class InicialScreen: SKScene {
         let frontTouchedNode = self.atPoint(location)
 
         if (frontTouchedNode.contains(hiddenNodeGenius.position)) {
+            touchOnGames += 1
             let geniusScene = GeniusScene(size: self.size)
                            
             let doorsClose = SKTransition.doorsCloseVertical(withDuration: 1.0)
             view?.presentScene(geniusScene, transition: doorsClose)
+            print(touchOnGames)
         }
         
         if (frontTouchedNode.contains(hiddenNodeSnake.position)) {
+            touchOnGames += 1
             let snakeScene = GameSnake(size: self.size)
 
             let doorsClose = SKTransition.doorsCloseVertical(withDuration: 1.0)
             view?.presentScene(snakeScene, transition: doorsClose)
+            print(touchOnGames)
         }
 
         if (frontTouchedNode.contains(hiddenNodeSpaceInvaders.position)) {
+            touchOnGames += 1
             let spaceScene = SpaceInvaders(size: self.size)
 
             let doorsClose = SKTransition.doorsCloseVertical(withDuration: 1.0)
             view?.presentScene(spaceScene, transition: doorsClose)
+            print(touchOnGames)
+        }
+        
+        if touchOnGames == 3 {
+            print("Foi")
         }
    
     }

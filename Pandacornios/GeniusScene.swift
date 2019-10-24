@@ -11,6 +11,7 @@ import GameplayKit
 import AVKit
 
 class GeniusScene: SKScene {
+    var endGame: Bool = false
     // MARK: Outlets
     // Player
     var playerTouch = 0
@@ -135,6 +136,21 @@ class GeniusScene: SKScene {
     func resetPlayerGameSequel() {
         playerSequel = []
     }
+    
+    func endingGameSetUp() {
+        self.animate(animatedButtons: [self.redButtonOff], completion: {})
+        self.animate(animatedButtons: [self.blueButtonOff], completion: {})
+        self.animate(animatedButtons: [self.greenButtonOff], completion: {})
+        self.animate(animatedButtons: [self.yellowButtonOff], completion: {})
+
+        if !endGame {
+      endGame = true
+
+      let gameOverScene: GameOverSceneGenius = GameOverSceneGenius(size: size)
+
+      view?.presentScene(gameOverScene, transition: SKTransition.doorsOpenVertical (withDuration: 1.0))
+        }
+    }
     // MARK: Touches Funcions
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first
@@ -170,12 +186,11 @@ class GeniusScene: SKScene {
                         }
                         self.playerTouch += 1
                     } else {
-                        self.animate(animatedButtons: [self.redButtonOff], completion: {})
-                        self.animate(animatedButtons: [self.blueButtonOff], completion: {})
-                        self.animate(animatedButtons: [self.greenButtonOff], completion: {})
-                        self.animate(animatedButtons: [self.yellowButtonOff], completion: {})
-                        self.resetPlayerGameSequel()
-                        self.resetGame()
+                        self.endingGameSetUp()
+                        
+                        
+                        //                        self.resetPlayerGameSequel()
+//                        self.resetGame()
                     }
                 }
             }

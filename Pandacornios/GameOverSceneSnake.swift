@@ -61,11 +61,8 @@ class GameOverSceneSnake: SKScene {
     let labelReturnMain = SKLabelNode(fontNamed: "Galvji")
     labelReturnMain.fontSize = 17
     labelReturnMain.fontColor = SKColor.black
-<<<<<<< HEAD:Pandacornios/GameOverScene.swift
-    labelReturnMain.text = "Voltar para o quarto"
-=======
+
     labelReturnMain.text = "Volte para o quarto"
->>>>>>> origin/GameOver:Pandacornios/GameOverSceneSnake.swift
     labelReturnMain.position = CGPoint(x: self.size.width/2, y: gameOverLabel.frame.origin.y - gameOverLabel.frame.size.height - 250);
     
     self.addChild(labelReturnMain)
@@ -105,27 +102,11 @@ class GameOverSceneSnake: SKScene {
         if name == "btn2"{
             let gameScene = InicialScreen(size: self.size)
             gameScene.scaleMode = .aspectFill
-
-            self.view?.presentScene(gameScene)
+            
+            self.view?.presentScene(gameScene,transition: SKTransition.doorsOpenVertical(withDuration: 1.0))
         }
       }
   }
     
-    
-    
-  
-  override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?)  {
-    
-  }
-  
-  override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-    
-  }
-  
-  override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?)  {
-
-    
-  }
-
 }
 
