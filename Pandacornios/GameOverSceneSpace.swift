@@ -24,7 +24,7 @@ class GameOverSceneSpace: SKScene {
   func createContent() {
     
     let gameOverLabel = SKLabelNode(fontNamed: "Galvji")
-    gameOverLabel.fontSize = 50
+    gameOverLabel.fontSize = 60
     gameOverLabel.fontColor = #colorLiteral(red: 0.7843137255, green: 0.8235294118, blue: 0, alpha: 1)
     gameOverLabel.text = "Game"
     gameOverLabel.fontName = "Silkscreen Expanded"
@@ -33,7 +33,7 @@ class GameOverSceneSpace: SKScene {
     self.addChild(gameOverLabel)
     
     let gameOverLabel2 = SKLabelNode(fontNamed: "Galvji")
-    gameOverLabel2.fontSize = 50
+    gameOverLabel2.fontSize = 60
     gameOverLabel2.fontColor = SKColor.white
     gameOverLabel2.text = "Over!"
     gameOverLabel2.fontName = "Silkscreen Expanded"
@@ -42,7 +42,7 @@ class GameOverSceneSpace: SKScene {
     self.addChild(gameOverLabel2)
     
     let labelReturnGame = SKLabelNode(fontNamed: "Galvji")
-    labelReturnGame.fontSize = 17
+    labelReturnGame.fontSize = 27
     labelReturnGame.fontColor = SKColor.black
     labelReturnGame.text = "Jogar novamente"
     labelReturnGame.position = CGPoint(x: self.size.width/2, y: gameOverLabel.frame.origin.y - gameOverLabel.frame.size.height - 200);
@@ -52,24 +52,24 @@ class GameOverSceneSpace: SKScene {
     let buttonReturnGame = SKSpriteNode()
     buttonReturnGame.name = "btn"
     buttonReturnGame.color = #colorLiteral(red: 0.7843137255, green: 0.8235294118, blue: 0, alpha: 1)
-    buttonReturnGame.size.height = 30
+    buttonReturnGame.size.height = 40
     buttonReturnGame.size.width = UIScreen.main.bounds.size.width - 40
     buttonReturnGame.position = CGPoint(x: labelReturnGame.frame.midX, y: labelReturnGame.frame.midY)
     
     self.addChild(buttonReturnGame)
 
     let labelReturnMain = SKLabelNode(fontNamed: "Galvji")
-    labelReturnMain.fontSize = 17
+    labelReturnMain.fontSize = 27
     labelReturnMain.fontColor = SKColor.black
     labelReturnMain.text = "Volte para o quarto"
-    labelReturnMain.position = CGPoint(x: self.size.width/2, y: gameOverLabel.frame.origin.y - gameOverLabel.frame.size.height - 250);
+    labelReturnMain.position = CGPoint(x: self.size.width/2, y: gameOverLabel.frame.origin.y - gameOverLabel.frame.size.height - 280);
     
     self.addChild(labelReturnMain)
     
     let buttonReturnMain = SKSpriteNode()
     buttonReturnMain.name = "btn2"
     buttonReturnMain.color = #colorLiteral(red: 0.7843137255, green: 0.8235294118, blue: 0, alpha: 1)
-    buttonReturnMain.size.height = 30
+    buttonReturnMain.size.height = 40
     buttonReturnMain.size.width = UIScreen.main.bounds.size.width - 40
     buttonReturnMain.position = CGPoint(x: labelReturnGame.frame.midX, y: labelReturnMain.frame.midY)
     
