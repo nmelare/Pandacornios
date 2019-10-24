@@ -190,7 +190,7 @@ class SpaceInvaders: SKScene, SKPhysicsContactDelegate {
     ship = makeShip() as! SKSpriteNode
     
     // 2
-    ship.position = CGPoint(x: size.width / 2.0, y: kShipSize.height / 2.0)
+    ship.position = CGPoint(x: size.width / 2.0, y: kShipSize.height / 2.0 + 30)
     addChild(ship)
   }
   
