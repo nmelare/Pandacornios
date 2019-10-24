@@ -36,7 +36,7 @@ class InicialScreen: SKScene {
         hiddenNodeGenius.size = CGSize (width: size.height * 0.05, height: size.width * 0.1)
         hiddenNodeGenius.position = CGPoint(x: size.width * 0.8 , y: size.height * 0.3)
         hiddenNodeGenius.zPosition = +1
-//        hiddenNodeGenius.isHidden = true
+        hiddenNodeGenius.alpha = 0.01
     
        }
     
@@ -44,15 +44,15 @@ class InicialScreen: SKScene {
               self.addChild(hiddenNodeSnake)
            hiddenNodeSnake.size = CGSize (width: size.height * 0.06, height: size.width * 0.15)
            hiddenNodeSnake.position = CGPoint(x: size.width * 0.43 , y: size.height * 0.47)
-//           hiddenNodeSnake.isHidden = true
+        hiddenNodeSnake.alpha = 0.01
        
           }
     
     func hiddeNodeSpaceInvadersSetUp() {
-              self.addChild(hiddenNodeSpaceInvaders)
-           hiddenNodeSpaceInvaders.size = CGSize (width: size.height * 0.06, height: size.width * 0.2)
+            self.addChild(hiddenNodeSpaceInvaders)
+        hiddenNodeSpaceInvaders.size = CGSize (width: size.height * 0.06, height: size.width * 0.2)
         hiddenNodeSpaceInvaders.position = CGPoint(x: size.width * 0.35 , y: size.height * 0.3)
-//           hiddenNodeSpaceInvaders.isHidden = true
+        hiddenNodeSpaceInvaders.alpha = 0.01
        
           }
     
@@ -66,26 +66,25 @@ class InicialScreen: SKScene {
         let frontTouchedNode = self.atPoint(location)
 
         if (frontTouchedNode.contains(hiddenNodeGenius.position)) {
-            let newScene = GeniusScene(size: self.size)
+            let geniusScene = GeniusScene(size: self.size)
                            
             let doorsClose = SKTransition.doorsCloseVertical(withDuration: 1.0)
-            view?.presentScene(newScene, transition: doorsClose)
+            view?.presentScene(geniusScene, transition: doorsClose)
         }
         
         if (frontTouchedNode.contains(hiddenNodeSnake.position)) {
-            let newScene = GameSnake(size: self.size)
+            let snakeScene = GameSnake(size: self.size)
 
             let doorsClose = SKTransition.doorsCloseVertical(withDuration: 1.0)
-            view?.presentScene(newScene, transition: doorsClose)
+            view?.presentScene(snakeScene, transition: doorsClose)
         }
 
         if (frontTouchedNode.contains(hiddenNodeSpaceInvaders.position)) {
-            let newScene = SpaceInvaders(size: self.size)
+            let spaceScene = SpaceInvaders(size: self.size)
 
             let doorsClose = SKTransition.doorsCloseVertical(withDuration: 1.0)
-            view?.presentScene(newScene, transition: doorsClose)
+            view?.presentScene(spaceScene, transition: doorsClose)
         }
-        
-        
+   
     }
 }
