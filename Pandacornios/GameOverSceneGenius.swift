@@ -1,5 +1,5 @@
 //
-//  GameOverScene.swift
+//  GameOverSceneGenius.swift
 //  Pandacornios
 //
 //  Created by Rayane Xavier on 23/10/19.
@@ -9,7 +9,7 @@
 import UIKit
 import SpriteKit
 
-class GameOverScene: SKScene {
+class GameOverSceneGenius: SKScene {
   
   var contentCreated = false
   
@@ -61,7 +61,7 @@ class GameOverScene: SKScene {
     let labelReturnMain = SKLabelNode(fontNamed: "Galvji")
     labelReturnMain.fontSize = 17
     labelReturnMain.fontColor = SKColor.black
-    labelReturnMain.text = "Voltar para o quarto"
+    labelReturnMain.text = "Volte para o quarto"
     labelReturnMain.position = CGPoint(x: self.size.width/2, y: gameOverLabel.frame.origin.y - gameOverLabel.frame.size.height - 250);
     
     self.addChild(labelReturnMain)
@@ -91,14 +91,13 @@ class GameOverScene: SKScene {
     if let name = touchedNode.name {
         if name == "btn" {
 
-            let gameScene = GameSnake(size: self.size)
+            let gameScene = GeniusScene(size: self.size)
             gameScene.scaleMode = .aspectFill
 
             self.view?.presentScene(gameScene)
-            
-
 
           }
+        
         if name == "btn2"{
             let gameScene = InicialScreen(size: self.size)
             gameScene.scaleMode = .aspectFill
