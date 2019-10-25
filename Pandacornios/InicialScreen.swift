@@ -30,13 +30,13 @@ class InicialScreen: SKScene {
         background.size = CGSize (width: size.height * 1, height: size.width * 1)
         background.position = CGPoint(x: size.width/2, y: size.height/2)
         background.zRotation = (.pi / 2)
+        background.alpha = 0.99
     }
     
     func hiddeNodeGeniusSetUp() {
            self.addChild(hiddenNodeGenius)
         hiddenNodeGenius.size = CGSize (width: size.height * 0.05, height: size.width * 0.1)
         hiddenNodeGenius.position = CGPoint(x: size.width * 0.8 , y: size.height * 0.3)
-        hiddenNodeGenius.zPosition = +1
         hiddenNodeGenius.alpha = 0.01
     
        }
@@ -51,8 +51,8 @@ class InicialScreen: SKScene {
     
     func hiddeNodeSpaceInvadersSetUp() {
             self.addChild(hiddenNodeSpaceInvaders)
-        hiddenNodeSpaceInvaders.size = CGSize (width: size.height * 0.06, height: size.width * 0.2)
-        hiddenNodeSpaceInvaders.position = CGPoint(x: size.width * 0.35 , y: size.height * 0.3)
+        hiddenNodeSpaceInvaders.size = CGSize (width: size.height * 0.06, height: size.width * 0.20)
+        hiddenNodeSpaceInvaders.position = CGPoint(x: size.width * 0.35 , y: size.height * 0.30)
         hiddenNodeSpaceInvaders.alpha = 0.01
        
           }
@@ -64,9 +64,7 @@ class InicialScreen: SKScene {
         
         let location = touch.location(in: self)
         
-        let frontTouchedNode = self.atPoint(location)
-
-        if (frontTouchedNode.contains(hiddenNodeGenius.position)) {
+        if (hiddenNodeGenius.contains(location)) {
             touchOnGames += 1
             let geniusScene = GeniusScene(size: self.size)
                            
@@ -75,7 +73,7 @@ class InicialScreen: SKScene {
             print(touchOnGames)
         }
         
-        if (frontTouchedNode.contains(hiddenNodeSnake.position)) {
+        if (hiddenNodeSnake.contains(location)) {
             touchOnGames += 1
             let snakeScene = GameSnake(size: self.size)
 
@@ -84,7 +82,7 @@ class InicialScreen: SKScene {
             print(touchOnGames)
         }
 
-        if (frontTouchedNode.contains(hiddenNodeSpaceInvaders.position)) {
+        if (hiddenNodeSpaceInvaders.contains(location)) {
             touchOnGames += 1
             let spaceScene = SpaceInvaders(size: self.size)
 

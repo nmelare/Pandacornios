@@ -510,8 +510,6 @@ class SpaceInvaders: SKScene, SKPhysicsContactDelegate {
           withDuration: 1.0,
           andSoundFileName: "ShipBullet.wav"
         )
-        } else {
-            print("tela de game over")
         }
     }
   }
@@ -522,7 +520,6 @@ class SpaceInvaders: SKScene, SKPhysicsContactDelegate {
   
     func touchMoved(toPoint: CGPoint) {
       ship.position.x = toPoint.x
-      print(toPoint.y)
       
     }
   
