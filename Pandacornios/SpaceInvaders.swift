@@ -9,7 +9,8 @@
 import SpriteKit
 
 class SpaceInvaders: SKScene, SKPhysicsContactDelegate {
-        
+    // MARK: Outlets
+    // Nodes
     var ship: SKSpriteNode = SKSpriteNode(imageNamed: "nave.png")
     
     let heart0: SKSpriteNode = SKSpriteNode(imageNamed: "coracao.png")
@@ -18,32 +19,39 @@ class SpaceInvaders: SKScene, SKPhysicsContactDelegate {
     
     let heart2: SKSpriteNode = SKSpriteNode(imageNamed: "coracao.png")
     
+    
+    // Timer
     var shipFireTimer: Timer?
     
-    var contentCreated = false
-      
-      // 1
-    var invaderMovementDirection: InvaderMovementDirection = .right
-      // 2
     var timeOfLastMove: CFTimeInterval = 0.0
-      // 3
+
     var timePerMove: CFTimeInterval = 0.5
-      
-    var tapQueue = [Int]()
+    
+    var contentCreated = false
+    
+    
+    // Moviment Invader
+    var invaderMovementDirection: InvaderMovementDirection = .right
+
+    // Contact
     var contactQueue = [SKPhysicsContact]()
       
-    var shipHealth: Float = 1.0
+    // Life
+    var shipLife: Float = 1.0
         
-    let kMinInvaderBottomHeight: Float = 40.0
+    // Game Over
     var gameEnding: Bool = false
-  
-  enum InvaderType {
+    
+    // Invaders Type
+    let kMinInvaderBottomHeight: Float = 80.0
+
+    enum InvaderType {
     case a
     case b
     case c
-    
+        
     static var size: CGSize {
-      return CGSize(width: 24, height: 16)
+        return CGSize(width: 24, height: 16)
     }
     
     static var name: String {
@@ -64,7 +72,7 @@ class SpaceInvaders: SKScene, SKPhysicsContactDelegate {
     case invaderFired
   }
   
-  let kInvaderGridSpacing = CGSize(width: 12, height: 12)
+  let kInvaderGridSpacing = CGSize(width: 30, height: 30)
   let kInvaderRowCount = 6
   let kInvaderColCount = 6
   
@@ -146,6 +154,7 @@ class SpaceInvaders: SKScene, SKPhysicsContactDelegate {
     invader.physicsBody!.categoryBitMask = kInvaderCategory
     invader.physicsBody!.contactTestBitMask = 0x0
     invader.physicsBody!.collisionBitMask = 0x0
+    invader.size = CGSize(width: invader.size.width * 1.3, height: invader.size.height * 1.3)
     
     return invader
   }
@@ -200,7 +209,7 @@ class SpaceInvaders: SKScene, SKPhysicsContactDelegate {
     
     // 1
     ship.physicsBody = SKPhysicsBody(rectangleOf: ship.frame.size)
-
+    ship.size = CGSize(width: ship.size.width * 2, height: ship.size.height * 2)
     // 2
     ship.physicsBody!.isDynamic = true
 
@@ -222,57 +231,55 @@ class SpaceInvaders: SKScene, SKPhysicsContactDelegate {
   
   func setupHud() {
     
-    // 4
     let healthLabel = SKLabelNode(fontNamed: "slkscre")
     healthLabel.name = kHealthHudName
-    healthLabel.fontSize = 20
+    healthLabel.fontSize = 30
     
-    // 5
     healthLabel.fontColor = #colorLiteral(red: 1, green: 0.737254902, blue: 0.8431372549, alpha: 1)
-    healthLabel.text = String(format: "Vida: ", shipHealth * 100.0)
+    healthLabel.text = String(format: "Vida: ", shipLife * 100.0)
     
-    // 6
     healthLabel.position = CGPoint(
-      x: frame.size.width - 100,
-      y: size.height - (40 + healthLabel.frame.size.height/2)
+      x: frame.size.width - 120,
+      y: size.height - (70 + healthLabel.frame.size.height/2)
     )
     addChild(healthLabel)
     
     // heart 0
     heart0.position = CGPoint(
-        x: frame.size.width - 60,
-        y: size.height - (33 + healthLabel.frame.size.height/2)
+        x: frame.size.width - 70,
+        y: size.height - (60 + healthLabel.frame.size.height/2)
     )
-    heart0.size = CGSize(width: 15, height: 15)
+    heart0.size = CGSize(width: heart0.size.width * 3.5, height: heart0.size.height * 3.5)
     addChild(heart0)
     
     // heart 1
     heart1.position = CGPoint(
-        x: frame.size.width - 40,
-        y: size.height - (33 + healthLabel.frame.size.height/2)
+        x: frame.size.width - 45,
+        y: size.height - (60 + healthLabel.frame.size.height/2)
     )
-    heart1.size = CGSize(width: 15, height: 15)
+    heart1.size = CGSize(width: heart1.size.width * 3.5, height: heart1.size.height * 3.5)
     addChild(heart1)
     
     // heart 2
     heart2.position = CGPoint(
         x: frame.size.width - 20,
-        y: size.height - (33 + healthLabel.frame.size.height/2)
+        y: size.height - (60 + healthLabel.frame.size.height/2)
     )
-    heart2.size = CGSize(width: 15, height: 15)
+    heart2.size = CGSize(width: heart2.size.width * 3.5, height: heart2.size.height * 3.5)
     addChild(heart2)
 
   }
 
   func adjustShipHealth(by healthAdjustment: Float) {
     // 1
-    shipHealth = max(shipHealth + healthAdjustment, 0)
+    shipLife = max(shipLife + healthAdjustment, 0)
     
-    if heart2.size == CGSize(width: 15, height: 15) {
-        heart2.removeFromParent()
-        heart2.size = CGSize(width: 0, height: 0)
-    } else {
+    if heart1 == self {
         heart1.removeFromParent()
+        heart1.size = CGSize(width: 0, height: 0)
+    } else {
+        heart2.removeFromParent()
+        
     }
   }
   
@@ -569,14 +576,14 @@ class SpaceInvaders: SKScene, SKPhysicsContactDelegate {
       // 1
       adjustShipHealth(by: -0.334)
       
-      if shipHealth <= 0.0 {
+      if shipLife <= 0.0 {
         // 2
         contact.bodyA.node!.removeFromParent()
         contact.bodyB.node!.removeFromParent()
       } else {
         // 3
         ship = childNode(withName: kShipName) as! SKSpriteNode; do {
-          ship.alpha = CGFloat(shipHealth)
+          ship.alpha = CGFloat(shipLife)
           
           if contact.bodyA.node == ship {
             contact.bodyB.node!.removeFromParent()
