@@ -196,6 +196,7 @@ class GameManagerSnake {
         return false
     }
     
+    // Declaration of functions
     func swipe(ID: Int) {
         if !(ID == 2 && playerDirection == 4) && !(ID == 4 && playerDirection == 2) {
             if !(ID == 1 && playerDirection == 3) && !(ID == 3 && playerDirection == 1) {
