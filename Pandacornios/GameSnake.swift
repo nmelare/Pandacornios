@@ -18,6 +18,8 @@ class GameSnake: SKScene {
     var playerPositions: [(Int, Int)] = []
     var gameBackground: SKShapeNode!
     var gameArray: [(node: SKShapeNode, x: Int, y: Int)] = []
+    
+    // Initialize a variable for the random score position. The “ ? “ indicates that this is nil (empty or not set yet) until we set the variable later.
     var scorePos: CGPoint?
     var gameEnding: Bool = false
     var contentCreated = false
