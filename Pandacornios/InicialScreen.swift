@@ -2,7 +2,7 @@
 //  GameScene.swift
 //  Pandacornios
 //
-//  Created by Nathalia Melare on 09/10/19.
+//  Created by Nathalia Melare & Luiza Fattori on 09/10/19.
 //  Copyright © 2019 Nathalia Melare. All rights reserved.
 //
 
@@ -15,13 +15,24 @@ class InicialScreen: SKScene {
     var hiddenNodeGenius: SKSpriteNode = SKSpriteNode(imageNamed: "redRetangleOff")
     var hiddenNodeSnake: SKSpriteNode = SKSpriteNode(imageNamed: "redRetangleOff")
     var hiddenNodeSpaceInvaders: SKSpriteNode = SKSpriteNode(imageNamed: "redRetangleOff")
-    var touchOnGames: Int = 0
     
     override func sceneDidLoad() {
         self.backgroundSetUp()
-        self.hiddeNodeGeniusSetUp()
-        self.hiddeNodeSpaceInvadersSetUp()
-        self.hiddeNodeSnakeSetUp()
+        if !MiniGamesController.shared.geniusWasPlayed {
+            self.hiddeNodeGeniusSetUp()
+        } else {
+            print("Genius não foi instanciado")
+        }
+        if !MiniGamesController.shared.spaceInvadersWasPlayed {
+            self.hiddeNodeSpaceInvadersSetUp()
+        } else {
+            print("Space não foi instanciado")
+        }
+        if !MiniGamesController.shared.snakeWasPlayed {
+            self.hiddeNodeSnakeSetUp()
+        } else {
+            print("Snake não foi instanciado")
+        }
     }
     
     func backgroundSetUp() {
@@ -34,15 +45,16 @@ class InicialScreen: SKScene {
     }
     
     func hiddeNodeGeniusSetUp() {
-           self.addChild(hiddenNodeGenius)
+        self.addChild(hiddenNodeGenius)
         hiddenNodeGenius.size = CGSize (width: size.height * 0.05, height: size.width * 0.1)
         hiddenNodeGenius.position = CGPoint(x: size.width * 0.8 , y: size.height * 0.3)
-        hiddenNodeGenius.alpha = 0.01
+        hiddenNodeGenius.zPosition = +1
+        hiddenNodeGenius.alpha = 1
     
        }
     
     func hiddeNodeSnakeSetUp() {
-              self.addChild(hiddenNodeSnake)
+            self.addChild(hiddenNodeSnake)
            hiddenNodeSnake.size = CGSize (width: size.height * 0.06, height: size.width * 0.15)
            hiddenNodeSnake.position = CGPoint(x: size.width * 0.43 , y: size.height * 0.47)
         hiddenNodeSnake.alpha = 0.01
@@ -51,9 +63,10 @@ class InicialScreen: SKScene {
     
     func hiddeNodeSpaceInvadersSetUp() {
             self.addChild(hiddenNodeSpaceInvaders)
+
         hiddenNodeSpaceInvaders.size = CGSize (width: size.height * 0.06, height: size.width * 0.20)
         hiddenNodeSpaceInvaders.position = CGPoint(x: size.width * 0.35 , y: size.height * 0.30)
-        hiddenNodeSpaceInvaders.alpha = 0.01
+        hiddenNodeSpaceInvaders.alpha = 1
        
           }
     
@@ -63,37 +76,30 @@ class InicialScreen: SKScene {
         }
         
         let location = touch.location(in: self)
-        
+
         if (hiddenNodeGenius.contains(location)) {
-            touchOnGames += 1
             let geniusScene = GeniusScene(size: self.size)
-                           
             let doorsClose = SKTransition.doorsCloseVertical(withDuration: 1.0)
             view?.presentScene(geniusScene, transition: doorsClose)
-            print(touchOnGames)
+
         }
         
+
         if (hiddenNodeSnake.contains(location)) {
-            touchOnGames += 1
             let snakeScene = GameSnake(size: self.size)
 
             let doorsClose = SKTransition.doorsCloseVertical(withDuration: 1.0)
             view?.presentScene(snakeScene, transition: doorsClose)
-            print(touchOnGames)
+
         }
 
+
         if (hiddenNodeSpaceInvaders.contains(location)) {
-            touchOnGames += 1
             let spaceScene = SpaceInvaders(size: self.size)
 
             let doorsClose = SKTransition.doorsCloseVertical(withDuration: 1.0)
             view?.presentScene(spaceScene, transition: doorsClose)
-            print(touchOnGames)
+            
         }
-        
-        if touchOnGames == 3 {
-            print("Foi")
-        }
-   
     }
 }
