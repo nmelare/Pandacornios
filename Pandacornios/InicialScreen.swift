@@ -33,6 +33,7 @@ class InicialScreen: SKScene {
         } else {
             print("Snake não foi instanciado")
         }
+        MusicHelper.shared.setupInicialScreen()
     }
     
     func backgroundSetUp() {
@@ -81,6 +82,7 @@ class InicialScreen: SKScene {
             let geniusScene = GeniusScene(size: self.size)
             let doorsClose = SKTransition.doorsCloseVertical(withDuration: 1.0)
             view?.presentScene(geniusScene, transition: doorsClose)
+            MusicHelper.shared.stop()
 
         }
         
@@ -90,7 +92,7 @@ class InicialScreen: SKScene {
 
             let doorsClose = SKTransition.doorsCloseVertical(withDuration: 1.0)
             view?.presentScene(snakeScene, transition: doorsClose)
-
+            MusicHelper.shared.stop()
         }
 
 
@@ -99,7 +101,7 @@ class InicialScreen: SKScene {
 
             let doorsClose = SKTransition.doorsCloseVertical(withDuration: 1.0)
             view?.presentScene(spaceScene, transition: doorsClose)
-            
+            MusicHelper.shared.stop()
         }
     }
 }
