@@ -20,6 +20,7 @@ class GameManagerSnake {
     var playerDirection: Int = 4
     var currentScore: Int = 0
     let defaults = UserDefaults.standard
+    //var height = Int(size.height)
     
     // MARK: Creating a game instance
     init(scene: GameSnake) {

@@ -114,7 +114,7 @@ class GameSnake: SKScene {
     // MARK: Size
         let width = Int(frame.size.width)
         let height = Int(frame.size.height)
-        let rect = CGRect(x: width - width + 25, y: height - height + 25 , width: width - 50, height: height - height/20)
+        let rect = CGRect(x: width - width + 25, y: height - height + 25 , width: width - 50, height: height - 70)
         
     // MARK: Set up Game Background
         gameBackground = SKShapeNode(rect: rect, cornerRadius: 20)
@@ -133,7 +133,7 @@ class GameSnake: SKScene {
     // MARK: Scene creation
     private func createGameBoard(width: Int, height: Int) {
         let numCols = 20
-        let numRows = height/22
+        let numRows = 40
         let cellWidth: CGFloat = CGFloat(width - 75) / CGFloat(numCols)
         
         var x = CGFloat(width - width + 45)

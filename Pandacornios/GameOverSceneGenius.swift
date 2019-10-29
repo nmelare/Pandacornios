@@ -61,7 +61,7 @@ class GameOverSceneGenius: SKScene {
     let labelReturnMain = SKLabelNode(fontNamed: "Galvji")
     labelReturnMain.fontSize = 27
     labelReturnMain.fontColor = SKColor.black
-    labelReturnMain.text = "Volte para o quarto"
+    labelReturnMain.text = "Voltar para o quarto"
     labelReturnMain.position = CGPoint(x: self.size.width/2, y: gameOverLabel.frame.origin.y - gameOverLabel.frame.size.height - 280);
     
     self.addChild(labelReturnMain)
