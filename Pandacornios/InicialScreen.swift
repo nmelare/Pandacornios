@@ -48,7 +48,7 @@ class InicialScreen: SKScene {
         hiddenNodeGenius.size = CGSize (width: size.height * 0.05, height: size.width * 0.1)
         hiddenNodeGenius.position = CGPoint(x: size.width * 0.8 , y: size.height * 0.3)
         hiddenNodeGenius.zPosition = +1
-        hiddenNodeGenius.alpha = 0.01
+        hiddenNodeGenius.alpha = 1
     
        }
     
@@ -64,7 +64,7 @@ class InicialScreen: SKScene {
             self.addChild(hiddenNodeSpaceInvaders)
         hiddenNodeSpaceInvaders.size = CGSize (width: size.height * 0.06, height: size.width * 0.2)
         hiddenNodeSpaceInvaders.position = CGPoint(x: size.width * 0.35 , y: size.height * 0.3)
-        hiddenNodeSpaceInvaders.alpha = 0.01
+        hiddenNodeSpaceInvaders.alpha = 1
        
           }
     
@@ -74,13 +74,11 @@ class InicialScreen: SKScene {
         }
         
         let location = touch.location(in: self)
-        
+
         let frontTouchedNode = self.atPoint(location)
-
+        
         if (frontTouchedNode.contains(hiddenNodeGenius.position)) {
-
             let geniusScene = GeniusScene(size: self.size)
-                           
             let doorsClose = SKTransition.doorsCloseVertical(withDuration: 1.0)
             view?.presentScene(geniusScene, transition: doorsClose)
 

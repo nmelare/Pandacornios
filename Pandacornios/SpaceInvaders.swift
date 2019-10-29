@@ -404,7 +404,8 @@ class SpaceInvaders: SKScene, SKPhysicsContactDelegate {
   
   override func update(_ currentTime: TimeInterval) {
     if isGameOver() {
-      endGame()
+        MiniGamesController.shared.spaceInvadersWasPlayed = true
+        endGame()
     }
     
     moveInvaders(forUpdate: currentTime)
@@ -628,7 +629,6 @@ class SpaceInvaders: SKScene, SKPhysicsContactDelegate {
     if !gameEnding {
       
       gameEnding = true
-        MiniGamesController.shared.geniusWasPlayed = true
       
       // 2
       let gameOverScene: GameOverSceneSpace = GameOverSceneSpace(size: size)

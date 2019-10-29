@@ -80,14 +80,11 @@ class GameOverSceneSnake: SKScene {
     self.backgroundColor = SKColor.black
     
   }
-  
     
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     let touch = touches.first
     let positionInScene = touch!.location(in: self)
     let touchedNode = self.atPoint(positionInScene)
-
-
 
     if let name = touchedNode.name {
         if name == "btn" {
