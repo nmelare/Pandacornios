@@ -18,6 +18,7 @@ class StoryBegin: SKScene {
         self.buttonFowardSetUp()
         self.firstImageSetUp()
         MusicHelper.shared.setup()
+      
     }
     
     func buttonFowardSetUp() {

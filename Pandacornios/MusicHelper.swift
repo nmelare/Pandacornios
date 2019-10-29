@@ -18,8 +18,8 @@ class MusicHelper {
     func setup() {
          do {
             audioPlayer =  try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "entrada", ofType: "mp3")!))
-             audioPlayer.prepareToPlay()
-           // audioPlayer.play()
+           //  audioPlayer.prepareToPlay()
+            audioPlayer.play()
 
         } catch {
            print (error)
