@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		254AE93C2368A8F800CCC3B8 /* MiniGamesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254AE93B2368A8F800CCC3B8 /* MiniGamesController.swift */; };
 		25C425A9234FB99D00B0FE94 /* GeniusScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C425A8234FB99D00B0FE94 /* GeniusScene.swift */; };
 		6FCA38BA234E488E005A239D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCA38B9234E488E005A239D /* AppDelegate.swift */; };
 		6FCA38BC234E488E005A239D /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6FCA38BB234E488E005A239D /* GameScene.sks */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		254AE93B2368A8F800CCC3B8 /* MiniGamesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGamesController.swift; sourceTree = "<group>"; };
 		25C425A8234FB99D00B0FE94 /* GeniusScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeniusScene.swift; sourceTree = "<group>"; };
 		6FCA38B6234E488E005A239D /* Pandacornios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pandacornios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FCA38B9234E488E005A239D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				6FCA38C6234E4892005A239D /* Assets.xcassets */,
 				6FCA38C8234E4892005A239D /* LaunchScreen.storyboard */,
 				6FCA38CB234E4892005A239D /* Info.plist */,
+				254AE93B2368A8F800CCC3B8 /* MiniGamesController.swift */,
 			);
 			path = Pandacornios;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				759B0EC52360BF6C00399888 /* StoryScene4.swift in Sources */,
 				E099B65B2360F2C600EDEC90 /* GameOverSceneGenius.swift in Sources */,
 				759B0EC12360BECB00399888 /* StoryScene2.swift in Sources */,
+				254AE93C2368A8F800CCC3B8 /* MiniGamesController.swift in Sources */,
 				759B0EC32360BF2B00399888 /* StoryScene3.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,7 +353,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 679BRJ4243;
+				DEVELOPMENT_TEAM = D6BLGKTBJB;
 				INFOPLIST_FILE = Pandacornios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -367,7 +371,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 679BRJ4243;
+				DEVELOPMENT_TEAM = D6BLGKTBJB;
 				INFOPLIST_FILE = Pandacornios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

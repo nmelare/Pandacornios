@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+class MiniGamesController {
+
+    static let shared: MiniGamesController = MiniGamesController()
+    var geniusWasPlayed: Bool = false
+    var snakeWasPlayed: Bool = false
+    var spaceInvadersWasPlayed: Bool = false
+}

@@ -2,7 +2,7 @@
 //  Genius.swift
 //  Pandacornios
 //
-//  Created by Luiza Fattori on 10/10/19.
+//  Created by Luiza Fattori & Nathalia Melare on 10/10/19.
 //  Copyright © 2019 Nathalia Melare. All rights reserved.
 //
 
@@ -186,7 +186,9 @@ class GeniusScene: SKScene {
                         }
                         self.playerTouch += 1
                     } else {
+                        MiniGamesController.shared.geniusWasPlayed = true
                         self.endingGameSetUp()
+
                         
                         
                         //                        self.resetPlayerGameSequel()
