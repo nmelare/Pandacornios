@@ -7,6 +7,7 @@
 //
 
 import SpriteKit
+import GameplayKit
 
 class GameManagerSnake {
     
@@ -21,6 +22,9 @@ class GameManagerSnake {
     var currentScore: Int = 0
     let defaults = UserDefaults.standard
     
+    let width = Int(UIScreen.main.bounds.width)
+    let height = Int(UIScreen.main.bounds.height)
+
     // MARK: Creating a game instance
     init(scene: GameSnake) {
         self.scene = scene
@@ -39,13 +43,13 @@ class GameManagerSnake {
     
     // MARK: This function generates a random position within the bounds of the board (20/40), arrays start counting at 0 so we count from 0 to 19 and from 0 to 39, this is a 20x40 array.
     private func generateNewPoint() {
-        var randX = CGFloat(Int.random(in: 0...19))
-        var randY = CGFloat(Int.random(in: 0...39))
+        var randX = CGFloat(Int.random(in: 0...width/22))
+        var randY = CGFloat(Int.random(in: 0...height/22))
     
     // ensure that a point is not generated inside the body of the snake. As the snake grows in length we will be more likely to run into this problem, so this code block should fix that issue.
         while contains(a: scene.playerPositions, v: (Int(randX), Int(randY))) {
-            randX = CGFloat(Int.random(in: 0...19))
-            randY = CGFloat(Int.random(in: 0...39))
+            randX = CGFloat(Int.random(in: 0...width/22))
+            randY = CGFloat(Int.random(in: 0...height/22))
         }
         
         scene.scorePos = CGPoint(x: randX, y: randY)
@@ -166,14 +170,14 @@ class GameManagerSnake {
             let x = scene.playerPositions[0].1
             let y = scene.playerPositions[0].0
             
-            if y > 40 {
+            if y > height/22 {
                 scene.playerPositions[0].0 = 0
             } else if y < 0 {
-                scene.playerPositions[0].0 = 40
-            } else if x > 20 {
+                scene.playerPositions[0].0 = height/22
+            } else if x > width/22 {
                 scene.playerPositions[0].1 = 0
             } else if x < 0 {
-                scene.playerPositions[0].1 = 20
+                scene.playerPositions[0].1 = width/22
             }
         }
         // Render the changes we made to the array of positions.

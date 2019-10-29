@@ -71,13 +71,7 @@ class GameSnake: SKScene {
     // MARK: Set up Highscore
     private func startGame() {
         let bottomCorner = CGPoint(x: 0, y: (frame.size.height / -2) + 20)
-        highScore = SKLabelNode(fontNamed: "ArialRoundedMTBold")
-        highScore.zPosition = 1
-        highScore.position = CGPoint(x: 0, y: self.frame.midY - 170)
-        highScore.fontSize = 100
-        highScore.text = "High Score: \(UserDefaults.standard.integer(forKey: "highScore"))"
-        highScore.fontColor = SKColor.white
-        highScore.isHidden = true
+        highScore = SKLabelNode(fontNamed: "Silkscreen Expanded")
         self.addChild(highScore)
         
     // MARK: Highscore - action
@@ -105,7 +99,7 @@ class GameSnake: SKScene {
         currentScore = SKLabelNode(fontNamed: "Silkscreen Expanded")
         currentScore.zPosition = 1
         currentScore.position = CGPoint(x:frame.size.width - 110, y: size.height - (80 + currentScore.frame.size.height/2))
-        currentScore.fontSize = 20
+        currentScore.fontSize = 25
         currentScore.isHidden = true
         currentScore.text = "Score: 0"
         currentScore.fontColor = #colorLiteral(red: 1, green: 0.7234264016, blue: 0.8472076058, alpha: 1)
@@ -114,7 +108,7 @@ class GameSnake: SKScene {
     // MARK: Size
         let width = Int(frame.size.width)
         let height = Int(frame.size.height)
-        let rect = CGRect(x: width - width + 25, y: height - height + 25 , width: width - 50, height: height - height/20)
+        let rect = CGRect(x: 25, y: 25 , width: width - 50, height: height - height/15)
         
     // MARK: Set up Game Background
         gameBackground = SKShapeNode(rect: rect, cornerRadius: 20)
@@ -132,12 +126,15 @@ class GameSnake: SKScene {
     
     // MARK: Scene creation
     private func createGameBoard(width: Int, height: Int) {
-        let numCols = 20
+        let numCols = width/22
         let numRows = height/22
-        let cellWidth: CGFloat = CGFloat(width - 75) / CGFloat(numCols)
+        let cellWidth: CGFloat = 18
         
-        var x = CGFloat(width - width + 45)
-        var y = CGFloat(height - height + 48)
+        print(numCols)
+        print(numRows)
+        
+        var x = CGFloat(45)
+        var y = CGFloat(45)
 
         for i in 0...numRows - 1 {
             for j in 0...numCols - 1 {
@@ -151,8 +148,8 @@ class GameSnake: SKScene {
 
                 x += cellWidth
             }
-            x = CGFloat(width - width + 45)
-            y += CGFloat(height - height + 18)
+            x = CGFloat(45)
+            y += CGFloat(18)
         }
     }
     // MARK: go to Game Over screen
