@@ -20,7 +20,7 @@ class GameSnake: SKScene {
     var gameArray: [(node: SKShapeNode, x: Int, y: Int)] = []
     var scorePos: CGPoint?
     var gameEnding: Bool = false
-      var contentCreated = false
+    var contentCreated = false
     
     
     override func didMove(to view: SKView) {
@@ -68,7 +68,6 @@ class GameSnake: SKScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 
     }
-    
     
     private func startGame() {
         let bottomCorner = CGPoint(x: 0, y: (frame.size.height / -2) + 20)

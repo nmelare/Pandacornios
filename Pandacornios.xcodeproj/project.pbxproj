@@ -36,7 +36,7 @@
 /* Begin PBXFileReference section */
 		254AE93B2368A8F800CCC3B8 /* MiniGamesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGamesController.swift; sourceTree = "<group>"; };
 		25C425A8234FB99D00B0FE94 /* GeniusScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeniusScene.swift; sourceTree = "<group>"; };
-		6FCA38B6234E488E005A239D /* Mudanças.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mudanças.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FCA38B6234E488E005A239D /* Mudanças.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mudanças.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FCA38B9234E488E005A239D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6FCA38BB234E488E005A239D /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		6FCA38BD234E488E005A239D /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 		6FCA38B7234E488E005A239D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6FCA38B6234E488E005A239D /* Mudanças.app */,
+				6FCA38B6234E488E005A239D /* Mudanças.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -138,7 +138,7 @@
 			);
 			name = Pandacornios;
 			productName = Pandacornios;
-			productReference = 6FCA38B6234E488E005A239D /* Mudanças.app */;
+			productReference = 6FCA38B6234E488E005A239D /* Mudanças.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -357,6 +357,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D6BLGKTBJB;
 				INFOPLIST_FILE = Pandacornios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -374,7 +375,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-
+				DEVELOPMENT_TEAM = D6BLGKTBJB;
 				INFOPLIST_FILE = Pandacornios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
