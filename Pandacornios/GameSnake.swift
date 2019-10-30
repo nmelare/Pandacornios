@@ -161,7 +161,7 @@ class GameSnake: SKScene {
          gameEnding = true
          
          // 2
-         let gameOverScene: GameOverSceneSnake = GameOverSceneSnake(size: size)
+         let gameOverScene: GameOverScene = GameOverScene(size: size)
          
          view?.presentScene(gameOverScene, transition: SKTransition.doorsOpenHorizontal(withDuration: 1.0))
        }

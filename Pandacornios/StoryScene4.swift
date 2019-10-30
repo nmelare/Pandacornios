@@ -11,13 +11,22 @@ import GameplayKit
 
 class StoryScene4: SKScene {
     
-
+    var buttonBack : SKSpriteNode = SKSpriteNode(imageNamed: "back_button")
     var buttonFoward: SKSpriteNode = SKSpriteNode(imageNamed: "foward_button")
     var firstImage: SKSpriteNode = SKSpriteNode(imageNamed: "ilustracao_04")
     
     override func sceneDidLoad() {
+        self.buttonBackSetUp()
         self.buttonFowardSetUp()
         self.firstImageSetUp()
+    }
+    
+    func buttonBackSetUp() {
+        self.addChild(buttonBack)
+        buttonBack.name = "buttonBack"
+        buttonBack.position = CGPoint(x: size.width * 0.5, y: size.height * 0.1)
+        buttonBack.zRotation = (.pi/2)
+        buttonBack.isUserInteractionEnabled = false
     }
     
     func buttonFowardSetUp() {
@@ -48,6 +57,12 @@ override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let newScene = StoryScene5(size: self.size)
                        
         let pushTransition = SKTransition.push(with: SKTransitionDirection(rawValue: 1)!, duration: 1.0)
+        view?.presentScene(newScene, transition: pushTransition)
+    }
+    if (frontTouchedNode.name == "buttonBack") {
+        let newScene = StoryScene3(size: self.size)
+                       
+        let pushTransition = SKTransition.push(with: SKTransitionDirection(rawValue: 4)!, duration: 1.0)
         view?.presentScene(newScene, transition: pushTransition)
     }
 }

@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "yellowButtonNeon.png",
+      "filename" : "amarelo_neon.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "yellowButtonNeon@2x.png",
+      "filename" : "amarelo_neon@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "yellowButtonNeon@3x.png",
+      "filename" : "amarelo_neon@3x.png",
       "scale" : "3x"
     }
   ],
