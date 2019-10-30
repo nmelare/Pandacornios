@@ -46,7 +46,6 @@ class SpaceInvaders: SKScene, SKPhysicsContactDelegate {
     // Invaders Type
     let kMinInvaderBottomHeight: Float = 80.0
 
-    enum InvaderType {
 
     var quitButton: SKSpriteNode = SKSpriteNode(imageNamed: "quit_button")
   
@@ -720,3 +719,4 @@ class SpaceInvaders: SKScene, SKPhysicsContactDelegate {
   }
   
 }
+
