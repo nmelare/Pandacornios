@@ -20,8 +20,8 @@ class GameSnake: SKScene {
     var gameArray: [(node: SKShapeNode, x: Int, y: Int)] = []
     var scorePos: CGPoint?
     var gameEnding: Bool = false
-      var contentCreated = false
-    
+    var contentCreated = false
+    var quitButton: SKSpriteNode = SKSpriteNode(imageNamed: "quit_button")
     
     override func didMove(to view: SKView) {
      //   self.physicsWorld.contactDelegate = self
@@ -29,6 +29,7 @@ class GameSnake: SKScene {
         game = GameManagerSnake(scene: self)
           startGame()
         initializeGameView()
+        self.setUpQuitButton()
       
       
         
@@ -64,11 +65,25 @@ class GameSnake: SKScene {
     @objc func swipeD() {
         game.swipe(ID: 4)
     }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//    override func sceneDidLoad() {
+//        self.setUpQuitButton()
+//    }
 
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first
+            else {
+                return
+        }
+
+        let location = touch.location(in: self)
+
+        guard let frontTouchedNode = self.atPoint(location) as? SKSpriteNode else { return }
+
+        if frontTouchedNode.name == "QuitButton" {
+            let gameScene = InicialScreen(size: self.size)
+            self.view?.presentScene(gameScene,transition: SKTransition.doorsOpenVertical(withDuration: 1.0))
+        }
     }
-    
     
     private func startGame() {
         let bottomCorner = CGPoint(x: 0, y: (frame.size.height / -2) + 20)
@@ -152,6 +167,14 @@ class GameSnake: SKScene {
             x = CGFloat(width - width + 45)
             y += CGFloat(height - height + 18)
         }
+    }
+
+    func setUpQuitButton() {
+        self.addChild(quitButton)
+        quitButton.position = CGPoint(x: size.width * 0.17, y: size.height * 0.915)
+        quitButton.size = CGSize (width: size.width * 0.15, height: size.height * 0.085)
+        quitButton.name = "QuitButton"
+        quitButton.zPosition = +2
     }
     
     func endGame() {
