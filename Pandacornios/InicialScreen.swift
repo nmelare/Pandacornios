@@ -16,6 +16,9 @@ class InicialScreen: SKScene {
     var hiddenNodeSnake: SKSpriteNode = SKSpriteNode(imageNamed: "redRetangleOff")
     var hiddenNodeSpaceInvaders: SKSpriteNode = SKSpriteNode(imageNamed: "redRetangleOff")
     var hiddenNodeBox: SKSpriteNode = SKSpriteNode(imageNamed: "redRetangleOff")
+    var labelNotEndYet = SKLabelNode(fontNamed: "Galvji")
+    var backgroundFromMessage = SKSpriteNode()
+
     
     override func sceneDidLoad() {
         self.backgroundSetUp()
@@ -84,8 +87,6 @@ class InicialScreen: SKScene {
 
     public func messageSetUp() {
 
-        let labelNotEndYet = SKLabelNode(fontNamed: "Galvji")
-
         labelNotEndYet.text = "Você ainda não guardou seus jogos na caixa"
         labelNotEndYet.position = CGPoint(x: self.size.width * 0.5, y: self.size.height * 0.5)
         labelNotEndYet.fontColor = SKColor.black
@@ -95,15 +96,14 @@ class InicialScreen: SKScene {
 
         self.addChild(labelNotEndYet)
 
-        let backgroundFromMessage = SKSpriteNode()
         backgroundFromMessage.color = SKColor.yellow
         backgroundFromMessage.size = CGSize(width: 40, height: UIScreen.main.bounds.size.height
              - 40)
         backgroundFromMessage.position = CGPoint(x: labelNotEndYet.frame.midX, y: labelNotEndYet.frame.midY)
         backgroundFromMessage.zPosition = +1
-//        backgroundFromMessage.zRotation = (.pi/2)
 
         self.addChild(backgroundFromMessage)
+
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -112,7 +112,10 @@ class InicialScreen: SKScene {
         }
         
         let location = touch.location(in: self)
-
+        if background.contains(location) {
+                        labelNotEndYet.removeFromParent()
+                        backgroundFromMessage.removeFromParent()
+                }
         if (hiddenNodeGenius.contains(location)) {
             let geniusScene = GeniusScene(size: self.size)
             let doorsClose = SKTransition.doorsCloseVertical(withDuration: 1.0)
@@ -142,8 +145,9 @@ class InicialScreen: SKScene {
             let doorClose = SKTransition.doorsCloseVertical(withDuration: 1.0)
             view?.presentScene(endStory, transition: doorClose)
 
-        } else {
+        }
+        if (hiddenNodeBox.contains(location)) {
             messageSetUp()
-            }
+        }
     }
 }
