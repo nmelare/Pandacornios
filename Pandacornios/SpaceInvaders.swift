@@ -36,6 +36,7 @@ class SpaceInvaders: SKScene, SKPhysicsContactDelegate {
         
     let kMinInvaderBottomHeight: Float = 40.0
     var gameEnding: Bool = false
+    var quitButton: SKSpriteNode = SKSpriteNode(imageNamed: "quit_button")
   
   enum InvaderType {
     case a
@@ -86,7 +87,9 @@ class SpaceInvaders: SKScene, SKPhysicsContactDelegate {
   // Object Lifecycle Management
   
   // Scene Setup and Content Creation
-  
+    override func sceneDidLoad() {
+        self.setUpQuitButton()
+    }
   override func didMove(to view: SKView) {
     
     if (!self.contentCreated) {
@@ -404,7 +407,8 @@ class SpaceInvaders: SKScene, SKPhysicsContactDelegate {
   
   override func update(_ currentTime: TimeInterval) {
     if isGameOver() {
-      endGame()
+        MiniGamesController.shared.spaceInvadersWasPlayed = true
+        endGame()
     }
     
     moveInvaders(forUpdate: currentTime)
@@ -526,10 +530,31 @@ class SpaceInvaders: SKScene, SKPhysicsContactDelegate {
     func touchUp (atPoint: CGPoint) {
       ship.position.x = atPoint.x
     }
+
+    func setUpQuitButton() {
+        self.addChild(quitButton)
+        quitButton.position = CGPoint(x: size.width * 0.1, y: size.height * 0.90)
+        quitButton.size = CGSize (width: size.width * 0.15, height: size.height * 0.085)
+        quitButton.name = "QuitButton"
+    }
   
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
           for t in touches { touchDown(atPoint: t.location(in:self))
           }
+        
+        guard let touch = touches.first
+            else {
+                return
+        }
+
+        let location = touch.location(in: self)
+
+        guard let frontTouchedNode = self.atPoint(location) as? SKSpriteNode else { return }
+
+        if frontTouchedNode.name == "QuitButton" {
+            let gameScene = InicialScreen(size: self.size)
+            self.view?.presentScene(gameScene,transition: SKTransition.doorsOpenVertical(withDuration: 1.0))
+        }
     }
   
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {

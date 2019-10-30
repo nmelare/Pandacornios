@@ -22,14 +22,17 @@ class GameSnake: SKScene {
     // Initialize a variable for the random score position. The “ ? “ indicates that this is nil (empty or not set yet) until we set the variable later.
     var scorePos: CGPoint?
     var gameEnding: Bool = false
-    var contentCreated = false
-    
+    var contentCreated = false   
+
+    var quitButton: SKSpriteNode = SKSpriteNode(imageNamed: "quit_button")
+
     
      // MARK: Call functions
     override func didMove(to view: SKView) {
         game = GameManagerSnake(scene: self)
         startGame()
         initializeGameView()
+        self.setUpQuitButton()
       
         
     // MARK: Swipe directions (the directions the snake can go with just the touch)
@@ -64,11 +67,27 @@ class GameSnake: SKScene {
     @objc func swipeD() {
         game.swipe(ID: 4)
     }
-    
+//    override func sceneDidLoad() {
+//        self.setUpQuitButton()
+//    }
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+
+        guard let touch = touches.first
+            else {
+                return
+        }
+
+        let location = touch.location(in: self)
+
+        guard let frontTouchedNode = self.atPoint(location) as? SKSpriteNode else { return }
+
+        if frontTouchedNode.name == "QuitButton" {
+            let gameScene = InicialScreen(size: self.size)
+            self.view?.presentScene(gameScene,transition: SKTransition.doorsOpenVertical(withDuration: 1.0))
+        }
     }
-    
-    // MARK: Set up Highscore
+
     private func startGame() {
         let bottomCorner = CGPoint(x: 0, y: (frame.size.height / -2) + 20)
         highScore = SKLabelNode(fontNamed: "Silkscreen Expanded")
@@ -153,7 +172,15 @@ class GameSnake: SKScene {
             y += CGFloat(18)
         }
     }
-    // MARK: go to Game Over screen
+
+    func setUpQuitButton() {
+        self.addChild(quitButton)
+        quitButton.position = CGPoint(x: size.width * 0.17, y: size.height * 0.915)
+        quitButton.size = CGSize (width: size.width * 0.15, height: size.height * 0.085)
+        quitButton.name = "QuitButton"
+        quitButton.zPosition = +2
+    }
+
     func endGame() {
        // 1
        if !gameEnding {

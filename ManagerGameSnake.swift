@@ -124,6 +124,7 @@ class GameManagerSnake {
                 scene.scorePos = nil
                 scene.playerPositions.removeAll()
                 renderChange()
+                MiniGamesController.shared.snakeWasPlayed = true
              self.scene.endGame()
                 }
         }
