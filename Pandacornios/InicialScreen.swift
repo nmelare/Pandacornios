@@ -26,6 +26,7 @@ class InicialScreen: SKScene {
 
         if !MiniGamesController.shared.geniusWasPlayed {
             self.hiddeNodeGeniusSetUp()
+
         }
 
         if !MiniGamesController.shared.spaceInvadersWasPlayed {
@@ -35,9 +36,34 @@ class InicialScreen: SKScene {
         if !MiniGamesController.shared.snakeWasPlayed {
             self.hiddeNodeSnakeSetUp()
         }
-        
+
+        switch  [ MiniGamesController.shared.geniusWasPlayed , MiniGamesController.shared.snakeWasPlayed , MiniGamesController.shared.spaceInvadersWasPlayed ] {
+        case [true ,true, true]:
+            background.texture = SKTexture(imageNamed: "snake_genius_space")
+
+        case [true, true, false]:
+            background.texture = SKTexture(imageNamed: "snake_genius")
+
+        case [true, false, true]:
+            background.texture = SKTexture(imageNamed: "genius_space")
+
+        case [false, true, true]:
+            background.texture = SKTexture(imageNamed:"snake_space")
+
+        case [false, false, true]:
+            background.texture = SKTexture(imageNamed: "space")
+
+        case [false, true, false]:
+            background.texture = SKTexture(imageNamed: "snake")
+
+        case [true, false, false]:
+            background.texture = SKTexture(imageNamed: "genius")
+
+        default:
+            background.texture = SKTexture(imageNamed: "Background")
+        }
+
     }
-    
     func backgroundSetUp() {
         self.addChild(background)
 
@@ -112,10 +138,13 @@ class InicialScreen: SKScene {
         }
         
         let location = touch.location(in: self)
+
         if background.contains(location) {
-                        labelNotEndYet.removeFromParent()
-                        backgroundFromMessage.removeFromParent()
-                }
+            labelNotEndYet.removeFromParent()
+            backgroundFromMessage.removeFromParent()
+
+        }
+
         if (hiddenNodeGenius.contains(location)) {
             let geniusScene = GeniusScene(size: self.size)
             let doorsClose = SKTransition.doorsCloseVertical(withDuration: 1.0)
