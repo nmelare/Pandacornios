@@ -43,13 +43,13 @@ class GameManagerSnake {
     
     // MARK: This function generates a random position within the bounds of the board (20/40), arrays start counting at 0 so we count from 0 to 19 and from 0 to 39, this is a 20x40 array.
     private func generateNewPoint() {
-        var randX = CGFloat(Int.random(in: 0...width/22))
-        var randY = CGFloat(Int.random(in: 0...height/22))
+        var randX = CGFloat(Int.random(in: 0...(width/22)-1))
+        var randY = CGFloat(Int.random(in: 0...(height/22)-1))
     
     // ensure that a point is not generated inside the body of the snake. As the snake grows in length we will be more likely to run into this problem, so this code block should fix that issue.
         while contains(a: scene.playerPositions, v: (Int(randX), Int(randY))) {
-            randX = CGFloat(Int.random(in: 0...width/22))
-            randY = CGFloat(Int.random(in: 0...height/22))
+            randX = CGFloat(Int.random(in: 0...(width/22)-1))
+            randY = CGFloat(Int.random(in: 0...(height/22)-1))
         }
         
         scene.scorePos = CGPoint(x: randX, y: randY)
@@ -170,14 +170,14 @@ class GameManagerSnake {
             let x = scene.playerPositions[0].1
             let y = scene.playerPositions[0].0
             
-            if y > height/22 {
+            if y > (height/22)-1 {
                 scene.playerPositions[0].0 = 0
             } else if y < 0 {
-                scene.playerPositions[0].0 = height/22
-            } else if x > width/22 {
+                scene.playerPositions[0].0 = (height/22)-1
+            } else if x > (width/22)-1 {
                 scene.playerPositions[0].1 = 0
             } else if x < 0 {
-                scene.playerPositions[0].1 = width/22
+                scene.playerPositions[0].1 = (width/22)-1
             }
         }
         // Render the changes we made to the array of positions.

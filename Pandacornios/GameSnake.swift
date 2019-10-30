@@ -133,6 +133,7 @@ class GameSnake: SKScene {
         print(numCols)
         print(numRows)
         
+        
         var x = CGFloat(45)
         var y = CGFloat(45)
 
