@@ -25,11 +25,18 @@
 		759B0EC72360C03400399888 /* StoryScene5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759B0EC62360C03400399888 /* StoryScene5.swift */; };
 		759B0EC92360C06500399888 /* StoryScene6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759B0EC82360C06500399888 /* StoryScene6.swift */; };
 
+		95302C022369F8A9002F2FE5 /* entrada.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 95302C012369F8A9002F2FE5 /* entrada.mp3 */; };
+		9559081F2368D16A00A32C5C /* MusicHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9559081E2368D16A00A32C5C /* MusicHelper.swift */; };
+		955908212368D27A00A32C5C /* musicaDaNarrativa.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 955908202368D27A00A32C5C /* musicaDaNarrativa.mp3 */; };
+		955908232368D29E00A32C5C /* cenario.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 955908222368D29E00A32C5C /* cenario.mp3 */; };
+
+
 		E002B2D12369FF6200A2C7E9 /* shipSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = E002B2CF2369FF6200A2C7E9 /* shipSound.wav */; };
 		E002B2D22369FF6200A2C7E9 /* invadersSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = E002B2D02369FF6200A2C7E9 /* invadersSound.wav */; };
 
 		E002B2D6236A021700A2C7E9 /* eatSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = E002B2D5236A021700A2C7E9 /* eatSound.wav */; };
 		E002B2D8236A0BD900A2C7E9 /* gameOverSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = E002B2D7236A0BD900A2C7E9 /* gameOverSound.wav */; };
+
 
 		E00B886223624D9A004459AC /* slkscre.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E00B886123624D9A004459AC /* slkscre.ttf */; };
 		E099B6472360D11100EDEC90 /* SpaceInvaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = E099B6462360D11100EDEC90 /* SpaceInvaders.swift */; };
@@ -61,11 +68,18 @@
 		759B0EC62360C03400399888 /* StoryScene5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryScene5.swift; sourceTree = "<group>"; };
 		759B0EC82360C06500399888 /* StoryScene6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryScene6.swift; sourceTree = "<group>"; };
 
+		95302C012369F8A9002F2FE5 /* entrada.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = entrada.mp3; path = ../../Sounds/entrada.mp3; sourceTree = "<group>"; };
+		9559081E2368D16A00A32C5C /* MusicHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicHelper.swift; sourceTree = "<group>"; };
+		955908202368D27A00A32C5C /* musicaDaNarrativa.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = musicaDaNarrativa.mp3; sourceTree = "<group>"; };
+		955908222368D29E00A32C5C /* cenario.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cenario.mp3; sourceTree = "<group>"; };
+
+
 		E002B2CF2369FF6200A2C7E9 /* shipSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shipSound.wav; sourceTree = "<group>"; };
 		E002B2D02369FF6200A2C7E9 /* invadersSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = invadersSound.wav; sourceTree = "<group>"; };
 
 		E002B2D5236A021700A2C7E9 /* eatSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = eatSound.wav; sourceTree = "<group>"; };
 		E002B2D7236A0BD900A2C7E9 /* gameOverSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = gameOverSound.wav; sourceTree = "<group>"; };
+
 
 		E00B886123624D9A004459AC /* slkscre.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = slkscre.ttf; sourceTree = "<group>"; };
 		E099B6462360D11100EDEC90 /* SpaceInvaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceInvaders.swift; sourceTree = "<group>"; };
@@ -106,6 +120,13 @@
 		6FCA38B8234E488E005A239D /* Pandacornios */ = {
 			isa = PBXGroup;
 			children = (
+
+				955908202368D27A00A32C5C /* musicaDaNarrativa.mp3 */,
+				955908222368D29E00A32C5C /* cenario.mp3 */,
+				95302C012369F8A9002F2FE5 /* entrada.mp3 */,
+				25C425A8234FB99D00B0FE94 /* GeniusScene.swift */,
+				9559081E2368D16A00A32C5C /* MusicHelper.swift */,
+
 				6FDE81B0235CC38D001294F5 /* StoryBegin.swift */,
 				759B0EC02360BECB00399888 /* StoryScene2.swift */,
 				759B0EC22360BF2B00399888 /* StoryScene3.swift */,
@@ -212,6 +233,13 @@
 				E00B886223624D9A004459AC /* slkscre.ttf in Resources */,
 				6FCA38C5234E488E005A239D /* Main.storyboard in Resources */,
 
+				955908232368D29E00A32C5C /* cenario.mp3 in Resources */,
+				6FCA38BC234E488E005A239D /* GameScene.sks in Resources */,
+				955908212368D27A00A32C5C /* musicaDaNarrativa.mp3 in Resources */,
+				6FCA38C7234E4892005A239D /* Assets.xcassets in Resources */,
+				6FCA38CA234E4892005A239D /* LaunchScreen.storyboard in Resources */,
+				95302C022369F8A9002F2FE5 /* entrada.mp3 in Resources */,
+
 				E002B2D22369FF6200A2C7E9 /* invadersSound.wav in Resources */,
 
 				E002B2D6236A021700A2C7E9 /* eatSound.wav in Resources */,
@@ -221,6 +249,7 @@
 				6FCA38C7234E4892005A239D /* Assets.xcassets in Resources */,
 				6FCA38CA234E4892005A239D /* LaunchScreen.storyboard in Resources */,
 				E002B2D12369FF6200A2C7E9 /* shipSound.wav in Resources */,
+
 				6FCA38BE234E488E005A239D /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -237,6 +266,7 @@
 				6FDE81B1235CC38D001294F5 /* StoryBegin.swift in Sources */,
 				759B0EC92360C06500399888 /* StoryScene6.swift in Sources */,
 				E099B6572360DE7200EDEC90 /* GameSnake.swift in Sources */,
+				9559081F2368D16A00A32C5C /* MusicHelper.swift in Sources */,
 				E099B6532360DD3500EDEC90 /* GameOverSceneSnake.swift in Sources */,
 				E099B6592360F0E000EDEC90 /* GameOverSceneSpace.swift in Sources */,
 				6FCA38D2234E52FE005A239D /* NewScene.swift in Sources */,
@@ -412,7 +442,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-
+				DEVELOPMENT_TEAM = 56RTBWDLYU;
 				INFOPLIST_FILE = Pandacornios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

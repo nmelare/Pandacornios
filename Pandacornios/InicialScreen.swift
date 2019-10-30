@@ -37,6 +37,9 @@ class InicialScreen: SKScene {
             self.hiddeNodeSnakeSetUp()
         }
 
+        MusicHelper.shared.setupInicialScreen()
+
+
         switch  [ MiniGamesController.shared.geniusWasPlayed , MiniGamesController.shared.snakeWasPlayed , MiniGamesController.shared.spaceInvadersWasPlayed ] {
         case [true ,true, true]:
             background.texture = SKTexture(imageNamed: "snake_genius_space")
@@ -62,6 +65,7 @@ class InicialScreen: SKScene {
         default:
             background.texture = SKTexture(imageNamed: "Background")
         }
+
 
     }
     func backgroundSetUp() {
@@ -149,6 +153,7 @@ class InicialScreen: SKScene {
             let geniusScene = GeniusScene(size: self.size)
             let doorsClose = SKTransition.doorsCloseVertical(withDuration: 1.0)
             view?.presentScene(geniusScene, transition: doorsClose)
+            MusicHelper.shared.stop()
 
         }
 
@@ -157,7 +162,7 @@ class InicialScreen: SKScene {
 
             let doorsClose = SKTransition.doorsCloseVertical(withDuration: 1.0)
             view?.presentScene(snakeScene, transition: doorsClose)
-
+            MusicHelper.shared.stop()
         }
 
         if (hiddenNodeSpaceInvaders.contains(location)) {
@@ -165,7 +170,7 @@ class InicialScreen: SKScene {
 
             let doorsClose = SKTransition.doorsCloseVertical(withDuration: 1.0)
             view?.presentScene(spaceScene, transition: doorsClose)
-            
+            MusicHelper.shared.stop()
         }
 
         if (hiddenNodeBox.contains(location))  {

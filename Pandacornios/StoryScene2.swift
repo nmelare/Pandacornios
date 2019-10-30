@@ -19,6 +19,9 @@ class StoryScene2: SKScene {
         self.buttonBackSetUp()
         self.buttonFowardSetUp()
         self.firstImageSetUp()
+        //  MusicHelper.shared.setup()
+      
+             
     }
     
     func buttonBackSetUp() {
