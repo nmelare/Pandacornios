@@ -190,7 +190,7 @@ class SpaceInvaders: SKScene, SKPhysicsContactDelegate {
     ship = makeShip() as! SKSpriteNode
     
     // 2
-    ship.position = CGPoint(x: size.width / 2.0, y: kShipSize.height / 2.0)
+    ship.position = CGPoint(x: size.width / 2.0, y: kShipSize.height / 2.0 + 80)
     addChild(ship)
   }
   
@@ -510,9 +510,6 @@ class SpaceInvaders: SKScene, SKPhysicsContactDelegate {
           withDuration: 1.0,
           andSoundFileName: "ShipBullet.wav"
         )
-        } else {
-            GameOverScene()
-            print("tela de game over")
         }
     }
   }
@@ -523,7 +520,6 @@ class SpaceInvaders: SKScene, SKPhysicsContactDelegate {
   
     func touchMoved(toPoint: CGPoint) {
       ship.position.x = toPoint.x
-      print(toPoint.y)
       
     }
   
@@ -631,7 +627,7 @@ class SpaceInvaders: SKScene, SKPhysicsContactDelegate {
       gameEnding = true
       
       // 2
-      let gameOverScene: GameOverScene = GameOverScene(size: size)
+      let gameOverScene: GameOverSceneSpace = GameOverSceneSpace(size: size)
       
       view?.presentScene(gameOverScene, transition: SKTransition.doorsOpenHorizontal(withDuration: 1.0))
     }
