@@ -29,6 +29,7 @@ class GeniusScene: SKScene {
     var greenButtonOff: SKSpriteNode = SKSpriteNode(imageNamed: "greenButton")
     var blueButtonOff: SKSpriteNode = SKSpriteNode(imageNamed: "blueButton")
     var playButton: SKSpriteNode = SKSpriteNode(imageNamed: "play_button")
+    var quitButton: SKSpriteNode = SKSpriteNode(imageNamed: "quit_button")
 
     // Arrays
     var buttonsOptions: [SKSpriteNode] = []
@@ -43,6 +44,7 @@ class GeniusScene: SKScene {
         self.setUpGreenButtonOff()
         self.setUpYellowButtonOff()
         self.setUpPlayButton()
+        self.setUpQuitButton()
 
         self.buttonsOptions = [blueButtonOff, redButtonOff, yellowButtonOff, greenButtonOff]
     }
@@ -81,6 +83,14 @@ class GeniusScene: SKScene {
         playButton.size = CGSize(width: size.width / 7, height: size.height / 10)
         playButton.name = "PlayButton"
     }
+
+    func setUpQuitButton() {
+        self.addChild(quitButton)
+        quitButton.position = CGPoint(x: size.width * 0.1, y: size.height * 0.90)
+        quitButton.size = CGSize (width: size.width * 0.15, height: size.height * 0.085)
+        quitButton.name = "QuitButton"
+    }
+
     // MARK: Funcions
     func playGame() {
         let elementOfTheSequel = buttonsOptions.randomElement()
@@ -162,6 +172,11 @@ class GeniusScene: SKScene {
 
         guard let frontTouchedNode = self.atPoint(location) as? SKSpriteNode else { return }
 
+        if frontTouchedNode.name == "QuitButton" {
+            let gameScene = InicialScreen(size: self.size)
+            self.view?.presentScene(gameScene,transition: SKTransition.doorsOpenVertical(withDuration: 1.0))
+        }
+
         if frontTouchedNode.name == "PlayButton" {
             self.resetGame()
             self.playGame()
@@ -189,10 +204,6 @@ class GeniusScene: SKScene {
                         MiniGamesController.shared.geniusWasPlayed = true
                         self.endingGameSetUp()
 
-                        
-                        
-                        //                        self.resetPlayerGameSequel()
-//                        self.resetGame()
                     }
                 }
             }
