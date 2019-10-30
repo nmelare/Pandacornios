@@ -8,13 +8,15 @@
 
 import UIKit
 import SpriteKit
+import AVFoundation
 
 class GameOverSceneSnake: SKScene {
   
   var contentCreated = false
+    var soundGameOver: AVAudioPlayer!
   
   override func didMove(to view: SKView) {
-    
+    gameOverSound()
     if (!self.contentCreated) {
       self.createContent()
       self.contentCreated = true
@@ -79,14 +81,11 @@ class GameOverSceneSnake: SKScene {
     self.backgroundColor = SKColor.black
     
   }
-  
     
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     let touch = touches.first
     let positionInScene = touch!.location(in: self)
     let touchedNode = self.atPoint(positionInScene)
-
-
 
     if let name = touchedNode.name {
         if name == "btn" {
@@ -106,6 +105,16 @@ class GameOverSceneSnake: SKScene {
         }
       }
   }
+    
+    func gameOverSound() {
+        do {
+            soundGameOver = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "gameOverSound", ofType: "wav")!))
+            soundGameOver.prepareToPlay()
+            soundGameOver.play()
+        } catch {
+            print (error)
+        }
+    }
     
 }
 
