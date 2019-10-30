@@ -8,6 +8,7 @@
 
 import SpriteKit
 import GameplayKit
+import AVFoundation
 
 class GameManagerSnake {
     
@@ -24,6 +25,8 @@ class GameManagerSnake {
     
     let width = Int(UIScreen.main.bounds.width)
     let height = Int(UIScreen.main.bounds.height)
+    
+    var eatSound: AVAudioPlayer!
 
     // MARK: Creating a game instance
     init(scene: GameSnake) {
@@ -53,6 +56,17 @@ class GameManagerSnake {
         }
         
         scene.scorePos = CGPoint(x: randX, y: randY)
+        soundEat()
+    }
+    
+    func soundEat() {
+        do {
+            eatSound = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "eatSound", ofType: "wav")!))
+            eatSound.prepareToPlay()
+            eatSound.play()
+        } catch {
+            print (error)
+        }
     }
     
    // MARK: This function checks if a scorePos has been set, if it has then it checks the head of the snake. If the snake is touching a point then the score is iterated, the text label showing the score is updated and a new point is generated.
@@ -71,6 +85,11 @@ class GameManagerSnake {
                 
             }
         }
+    }
+    
+    func playSound(sound : SKAction){
+        
+        
     }
     
     // MARK: Check if the player’s head has collided with any of the tail positions. If player has died then set playerDirection to 0.
