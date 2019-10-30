@@ -34,6 +34,12 @@ class GeniusScene: SKScene {
     var buttonsOptions: [SKSpriteNode] = []
     var gameSequel: [SKSpriteNode] = []
     var playerSequel: [SKSpriteNode] = []
+    
+    // Souns
+    var soundBlue: AVAudioPlayer!
+    var soundGreen: AVAudioPlayer!
+    var soundRed: AVAudioPlayer!
+    var soundYellow: AVAudioPlayer!
 
     // MARK: scineDidLoad
     override func sceneDidLoad() {
@@ -52,6 +58,7 @@ class GeniusScene: SKScene {
         redButtonOff.position = CGPoint(x: size.width * 0.72, y: size.height * 0.67)
         redButtonOff.size = CGSize(width: size.width * 0.42, height: size.height * 0.23)
         redButtonOff.name = "RedButton"
+        audioGeniusRed()
     }
 
     func setUpYellowButtonOff() {
@@ -59,6 +66,7 @@ class GeniusScene: SKScene {
         yellowButtonOff.position = CGPoint(x: size.width * 0.3, y: size.height * 0.45)
         yellowButtonOff.size = CGSize(width: size.width * 0.42, height: size.height * 0.23)
         yellowButtonOff.name = "YellowButton"
+        audioGeniusYellow()
     }
 
     func setUpGreenButtonOff() {
@@ -66,6 +74,7 @@ class GeniusScene: SKScene {
         greenButtonOff.position = CGPoint(x: size.width * 0.3, y: size.height * 0.67)
         greenButtonOff.size = CGSize(width: size.width * 0.42, height: size.height * 0.23)
         greenButtonOff.name = "GreenButton"
+        audioGeniusGreen()
     }
 
     func setUpBlueButtonOff() {
@@ -73,6 +82,7 @@ class GeniusScene: SKScene {
         blueButtonOff.position = CGPoint(x: size.width * 0.72, y: size.height * 0.45)
         blueButtonOff.size = CGSize(width: size.width * 0.42, height: size.height * 0.23)
         blueButtonOff.name = "BlueButton"
+        audioGeniusBlue()
     }
 
     func setUpPlayButton() {
@@ -90,17 +100,25 @@ class GeniusScene: SKScene {
     func animate(animatedButtons: [SKSpriteNode], completion: @escaping () -> Void) {
         var actionList:[SKAction] = []
         for rect in animatedButtons {
-            var atlas = redButtonAtlas
+            var atlas: SKTextureAtlas
+            var soundFunc: () -> Void
             if rect.name == "GreenButton"{
                 atlas = greenButtonAtlas
+                soundFunc = audioGeniusGreen
             } else if rect.name == "BlueButton"{
                 atlas = blueButtonAtlas
+                soundFunc = audioGeniusBlue
             } else if rect.name == "YellowButton"{
                 atlas = yellowButtonAtlas
+                soundFunc = audioGeniusYellow
+            } else {
+                atlas = redButtonAtlas
+                soundFunc = audioGeniusRed
             }
 
             let textureOfRetangles:[SKTexture] = loadFrames(atlas)
-            let actionAndWait = SKAction.group([SKAction.run(SKAction.animate(with: textureOfRetangles, timePerFrame: 1 / TimeInterval(textureOfRetangles.count), resize: false, restore: true), onChildWithName: rect.name!),SKAction.wait(forDuration: 1.1)])
+
+            let actionAndWait = SKAction.group([SKAction.run(SKAction.animate(with: textureOfRetangles, timePerFrame: 1 / TimeInterval(textureOfRetangles.count), resize: false, restore: true), onChildWithName: rect.name!), SKAction.run({ soundFunc() }),SKAction.wait(forDuration: 1.1)])
             actionList.append(actionAndWait)
         }
         run(SKAction.sequence(actionList), completion: completion)
@@ -194,6 +212,46 @@ class GeniusScene: SKScene {
                     }
                 }
             }
+        }
+    }
+    
+    func audioGeniusBlue(){
+        do{
+            soundBlue = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "audioBlue", ofType: "mp3")!))
+            soundBlue.prepareToPlay()
+            soundBlue.play()
+        } catch {
+            print(error)
+        }
+    }
+    
+    func audioGeniusGreen(){
+        do{
+            soundGreen = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "audioGreen", ofType: "mp3")!))
+            soundGreen.prepareToPlay()
+            soundGreen.play()
+        } catch {
+            print(error)
+        }
+    }
+    
+    func audioGeniusRed(){
+        do{
+            soundRed = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "audioRed", ofType: "mp3")!))
+            soundRed.prepareToPlay()
+            soundRed.play()
+        } catch {
+            print(error)
+        }
+    }
+    
+    func audioGeniusYellow(){
+        do{
+            soundYellow = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "audioYellow", ofType: "mp3")!))
+            soundYellow.prepareToPlay()
+            soundYellow.play()
+        } catch {
+            print(error)
         }
     }
 }

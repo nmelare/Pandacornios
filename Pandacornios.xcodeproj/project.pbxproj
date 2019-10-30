@@ -23,6 +23,10 @@
 		759B0EC52360BF6C00399888 /* StoryScene4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759B0EC42360BF6C00399888 /* StoryScene4.swift */; };
 		759B0EC72360C03400399888 /* StoryScene5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759B0EC62360C03400399888 /* StoryScene5.swift */; };
 		759B0EC92360C06500399888 /* StoryScene6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759B0EC82360C06500399888 /* StoryScene6.swift */; };
+		E002B2DD236A1E7A00A2C7E9 /* audioGreen.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E002B2D9236A1E7A00A2C7E9 /* audioGreen.mp3 */; };
+		E002B2DE236A1E7A00A2C7E9 /* audioBlue.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E002B2DA236A1E7A00A2C7E9 /* audioBlue.mp3 */; };
+		E002B2DF236A1E7A00A2C7E9 /* audioYellow.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E002B2DB236A1E7A00A2C7E9 /* audioYellow.mp3 */; };
+		E002B2E0236A1E7A00A2C7E9 /* audioRed.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E002B2DC236A1E7A00A2C7E9 /* audioRed.mp3 */; };
 		E00B886223624D9A004459AC /* slkscre.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E00B886123624D9A004459AC /* slkscre.ttf */; };
 		E099B6472360D11100EDEC90 /* SpaceInvaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = E099B6462360D11100EDEC90 /* SpaceInvaders.swift */; };
 		E099B6532360DD3500EDEC90 /* GameOverSceneSnake.swift in Sources */ = {isa = PBXBuildFile; fileRef = E099B6522360DD3500EDEC90 /* GameOverSceneSnake.swift */; };
@@ -51,6 +55,10 @@
 		759B0EC42360BF6C00399888 /* StoryScene4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryScene4.swift; sourceTree = "<group>"; };
 		759B0EC62360C03400399888 /* StoryScene5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryScene5.swift; sourceTree = "<group>"; };
 		759B0EC82360C06500399888 /* StoryScene6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryScene6.swift; sourceTree = "<group>"; };
+		E002B2D9236A1E7A00A2C7E9 /* audioGreen.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = audioGreen.mp3; sourceTree = "<group>"; };
+		E002B2DA236A1E7A00A2C7E9 /* audioBlue.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = audioBlue.mp3; sourceTree = "<group>"; };
+		E002B2DB236A1E7A00A2C7E9 /* audioYellow.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = audioYellow.mp3; sourceTree = "<group>"; };
+		E002B2DC236A1E7A00A2C7E9 /* audioRed.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = audioRed.mp3; sourceTree = "<group>"; };
 		E00B886123624D9A004459AC /* slkscre.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = slkscre.ttf; sourceTree = "<group>"; };
 		E099B6462360D11100EDEC90 /* SpaceInvaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceInvaders.swift; sourceTree = "<group>"; };
 		E099B6522360DD3500EDEC90 /* GameOverSceneSnake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverSceneSnake.swift; sourceTree = "<group>"; };
@@ -91,6 +99,10 @@
 			isa = PBXGroup;
 			children = (
 				25C425A8234FB99D00B0FE94 /* GeniusScene.swift */,
+				E002B2DA236A1E7A00A2C7E9 /* audioBlue.mp3 */,
+				E002B2D9236A1E7A00A2C7E9 /* audioGreen.mp3 */,
+				E002B2DC236A1E7A00A2C7E9 /* audioRed.mp3 */,
+				E002B2DB236A1E7A00A2C7E9 /* audioYellow.mp3 */,
 				6FDE81B0235CC38D001294F5 /* StoryBegin.swift */,
 				759B0EC02360BECB00399888 /* StoryScene2.swift */,
 				759B0EC22360BF2B00399888 /* StoryScene3.swift */,
@@ -178,10 +190,14 @@
 			files = (
 				E00B886223624D9A004459AC /* slkscre.ttf in Resources */,
 				6FCA38C5234E488E005A239D /* Main.storyboard in Resources */,
+				E002B2DF236A1E7A00A2C7E9 /* audioYellow.mp3 in Resources */,
 				6FCA38BC234E488E005A239D /* GameScene.sks in Resources */,
 				6FCA38C7234E4892005A239D /* Assets.xcassets in Resources */,
+				E002B2DD236A1E7A00A2C7E9 /* audioGreen.mp3 in Resources */,
+				E002B2DE236A1E7A00A2C7E9 /* audioBlue.mp3 in Resources */,
 				6FCA38CA234E4892005A239D /* LaunchScreen.storyboard in Resources */,
 				6FCA38BE234E488E005A239D /* Actions.sks in Resources */,
+				E002B2E0236A1E7A00A2C7E9 /* audioRed.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
