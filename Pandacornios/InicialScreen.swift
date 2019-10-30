@@ -168,15 +168,17 @@ class InicialScreen: SKScene {
             
         }
 
-        if (hiddenNodeBox.contains(location)) && MiniGamesController.shared.geniusWasPlayed == true && MiniGamesController.shared.snakeWasPlayed == true && MiniGamesController.shared.spaceInvadersWasPlayed == true {
+        if (hiddenNodeBox.contains(location))  {
             let endStory = StoryScene4(size: self.size)
 
-            let doorClose = SKTransition.doorsCloseVertical(withDuration: 1.0)
-            view?.presentScene(endStory, transition: doorClose)
+            let pushTransition = SKTransition.push(with: SKTransitionDirection(rawValue: 1)!, duration: 1.0)
+            view?.presentScene(endStory, transition: pushTransition)
 
         }
+
         if (hiddenNodeBox.contains(location)) {
             messageSetUp()
+            
         }
     }
 }
