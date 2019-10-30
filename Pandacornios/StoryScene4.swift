@@ -18,6 +18,7 @@ class StoryScene4: SKScene {
     override func sceneDidLoad() {
         self.buttonFowardSetUp()
         self.firstImageSetUp()
+        MusicHelper.shared.stop()
     }
     
     func buttonFowardSetUp() {

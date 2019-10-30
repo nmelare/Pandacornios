@@ -11,15 +11,15 @@ import AVFoundation
 
 class MusicHelper {
     static let shared = MusicHelper()
-    var audioPlayer = AVAudioPlayer()
+    var audioPlayer : AVAudioPlayer!
     
     private init() { }
     
     func setup() {
          do {
-            audioPlayer =  try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "entrada", ofType: "mp3")!))
-           //  audioPlayer.prepareToPlay()
-            audioPlayer.play()
+            audioPlayer =  try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "musicaDaNarrativa", ofType: "mp3")!))
+             audioPlayer.prepareToPlay()
+             audioPlayer.play()
 
         } catch {
            print (error)
@@ -36,7 +36,6 @@ class MusicHelper {
                   print (error)
                }
     }
-
 
     func play() {
         audioPlayer.play()
