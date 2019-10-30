@@ -8,13 +8,16 @@
 
 import UIKit
 import SpriteKit
+import AVFoundation
 
 class GameOverSceneGenius: SKScene {
   
   var contentCreated = false
+
+    var soundGameOver: AVAudioPlayer!
   
   override func didMove(to view: SKView) {
-    
+    gameOverSound()
     if (!self.contentCreated) {
       self.createContent()
       self.contentCreated = true
@@ -106,6 +109,16 @@ class GameOverSceneGenius: SKScene {
         }
       }
   }
+    
+    func gameOverSound() {
+        do {
+            soundGameOver = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "gameOverSound", ofType: "wav")!))
+            soundGameOver.prepareToPlay()
+            soundGameOver.play()
+        } catch {
+            print (error)
+        }
+    }
 
 }
 
