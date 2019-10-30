@@ -428,7 +428,7 @@ class SpaceInvaders: SKScene, SKPhysicsContactDelegate {
           bullet: bullet,
           toDestination: bulletDestination,
           withDuration: 2.0,
-          andSoundFileName: "InvaderBullet.wav"
+          andSoundFileName: "invadersSound.wav"
         )
       }
     }
@@ -556,7 +556,7 @@ class SpaceInvaders: SKScene, SKPhysicsContactDelegate {
               bullet: bullet,
               toDestination: bulletDestination,
               withDuration: 1.0,
-              andSoundFileName: "ShipBullet.wav"
+              andSoundFileName: "shipSound.wav"
             )
         }
     }

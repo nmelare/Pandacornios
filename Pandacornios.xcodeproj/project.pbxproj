@@ -23,6 +23,8 @@
 		759B0EC52360BF6C00399888 /* StoryScene4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759B0EC42360BF6C00399888 /* StoryScene4.swift */; };
 		759B0EC72360C03400399888 /* StoryScene5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759B0EC62360C03400399888 /* StoryScene5.swift */; };
 		759B0EC92360C06500399888 /* StoryScene6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759B0EC82360C06500399888 /* StoryScene6.swift */; };
+		E002B2D12369FF6200A2C7E9 /* shipSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = E002B2CF2369FF6200A2C7E9 /* shipSound.wav */; };
+		E002B2D22369FF6200A2C7E9 /* invadersSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = E002B2D02369FF6200A2C7E9 /* invadersSound.wav */; };
 		E00B886223624D9A004459AC /* slkscre.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E00B886123624D9A004459AC /* slkscre.ttf */; };
 		E099B6472360D11100EDEC90 /* SpaceInvaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = E099B6462360D11100EDEC90 /* SpaceInvaders.swift */; };
 		E099B6532360DD3500EDEC90 /* GameOverSceneSnake.swift in Sources */ = {isa = PBXBuildFile; fileRef = E099B6522360DD3500EDEC90 /* GameOverSceneSnake.swift */; };
@@ -51,6 +53,8 @@
 		759B0EC42360BF6C00399888 /* StoryScene4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryScene4.swift; sourceTree = "<group>"; };
 		759B0EC62360C03400399888 /* StoryScene5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryScene5.swift; sourceTree = "<group>"; };
 		759B0EC82360C06500399888 /* StoryScene6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryScene6.swift; sourceTree = "<group>"; };
+		E002B2CF2369FF6200A2C7E9 /* shipSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shipSound.wav; sourceTree = "<group>"; };
+		E002B2D02369FF6200A2C7E9 /* invadersSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = invadersSound.wav; sourceTree = "<group>"; };
 		E00B886123624D9A004459AC /* slkscre.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = slkscre.ttf; sourceTree = "<group>"; };
 		E099B6462360D11100EDEC90 /* SpaceInvaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceInvaders.swift; sourceTree = "<group>"; };
 		E099B6522360DD3500EDEC90 /* GameOverSceneSnake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverSceneSnake.swift; sourceTree = "<group>"; };
@@ -105,6 +109,8 @@
 				25C425A8234FB99D00B0FE94 /* GeniusScene.swift */,
 				E099B65A2360F2C600EDEC90 /* GameOverSceneGenius.swift */,
 				E099B6462360D11100EDEC90 /* SpaceInvaders.swift */,
+				E002B2D02369FF6200A2C7E9 /* invadersSound.wav */,
+				E002B2CF2369FF6200A2C7E9 /* shipSound.wav */,
 				E099B6582360F0E000EDEC90 /* GameOverSceneSpace.swift */,
 				E099B6562360DE7200EDEC90 /* GameSnake.swift */,
 				E099B6542360DE3E00EDEC90 /* ManagerGameSnake.swift */,
@@ -178,9 +184,11 @@
 			files = (
 				E00B886223624D9A004459AC /* slkscre.ttf in Resources */,
 				6FCA38C5234E488E005A239D /* Main.storyboard in Resources */,
+				E002B2D22369FF6200A2C7E9 /* invadersSound.wav in Resources */,
 				6FCA38BC234E488E005A239D /* GameScene.sks in Resources */,
 				6FCA38C7234E4892005A239D /* Assets.xcassets in Resources */,
 				6FCA38CA234E4892005A239D /* LaunchScreen.storyboard in Resources */,
+				E002B2D12369FF6200A2C7E9 /* shipSound.wav in Resources */,
 				6FCA38BE234E488E005A239D /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
