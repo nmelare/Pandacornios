@@ -459,7 +459,7 @@ class SpaceInvaders: SKScene, SKPhysicsContactDelegate {
   }
   
   
-  // MARK: Invader Movement Helpers
+  // MARK: Invaders Types of Movement
   func determineInvaderMovementDirection() {
     // Movement Direction
     var proposedMovementDirection: InvaderMovementDirection = invaderMovementDirection
@@ -469,7 +469,7 @@ class SpaceInvaders: SKScene, SKPhysicsContactDelegate {
       
       switch self.invaderMovementDirection {
       case .right:
-        //Make down in rigut
+        //Make down in right
         if (node.frame.maxX >= node.scene!.size.width - 1.0) {
           proposedMovementDirection = .downThenLeft
           
@@ -489,7 +489,7 @@ class SpaceInvaders: SKScene, SKPhysicsContactDelegate {
           stop.pointee = true
         }
         
-      // Movement direct
+      // Movement direction
       case .downThenLeft:
         proposedMovementDirection = .left
         
@@ -512,7 +512,7 @@ class SpaceInvaders: SKScene, SKPhysicsContactDelegate {
     }
   }
   
-  // MARK: Bullet Helpers
+  // MARK: Bullet Actions
   func fireBullet(bullet: SKNode, toDestination destination: CGPoint, withDuration duration: CFTimeInterval, andSoundFileName soundName: String) {
     // Bullet actions
     let bulletAction = SKAction.sequence([
@@ -521,10 +521,10 @@ class SpaceInvaders: SKScene, SKPhysicsContactDelegate {
       SKAction.removeFromParent()
       ])
     
-    // Sound of Bullet
+    // Bullet Sound
     let soundAction = SKAction.playSoundFileNamed(soundName, waitForCompletion: true)
     
-    // Bullet run
+    // Bullet Run
     bullet.run(SKAction.group([bulletAction, soundAction]))
     
     addChild(bullet)
