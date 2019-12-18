@@ -97,7 +97,7 @@ class GeniusScene: SKScene {
     func setUpQuitButton() {
         self.addChild(quitButton)
         quitButton.position = CGPoint(x: size.width * 0.1, y: size.height * 0.90)
-        quitButton.size = CGSize (width: size.width * 0.15, height: size.height * 0.085)
+        quitButton.size = CGSize (width: size.width * 0.12, height: size.height * 0.065)
         quitButton.name = "QuitButton"
     }
 

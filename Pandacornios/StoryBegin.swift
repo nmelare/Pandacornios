@@ -13,12 +13,11 @@ class StoryBegin: SKScene {
     
     var buttonFoward: SKSpriteNode = SKSpriteNode(imageNamed: "foward_button")
     var firstImage: SKSpriteNode = SKSpriteNode(imageNamed: "ilustracao_01")
-    
+
     override func sceneDidLoad() {
         self.buttonFowardSetUp()
         self.firstImageSetUp()
         MusicHelper.shared.setup()
-      
     }
     
     func buttonFowardSetUp() {
@@ -31,7 +30,7 @@ class StoryBegin: SKScene {
 
     func  firstImageSetUp() {
         self.addChild(firstImage)
-        firstImage.size = CGSize(width: size.width * 1.3, height: size.height * 0.5)
+        firstImage.size = CGSize(width: UIScreen.main.bounds.width * 1.3, height: UIScreen.main.bounds.height * 0.6)
         firstImage.position = CGPoint(x: frame.size.width/2, y: frame.size.height/2)
         firstImage.zPosition = -1
         firstImage.zRotation = (.pi / 2)

@@ -176,7 +176,7 @@ class GameSnake: SKScene {
     func setUpQuitButton() {
         self.addChild(quitButton)
         quitButton.position = CGPoint(x: size.width * 0.17, y: size.height * 0.915)
-        quitButton.size = CGSize (width: size.width * 0.15, height: size.height * 0.085)
+        quitButton.size = CGSize (width: size.width * 0.12, height: size.height * 0.065)
         quitButton.name = "QuitButton"
         quitButton.zPosition = +2
     }

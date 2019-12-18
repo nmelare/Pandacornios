@@ -31,7 +31,7 @@ class StoryScene4: SKScene {
     
     func  firstImageSetUp() {
         self.addChild(firstImage)
-        firstImage.size = CGSize(width: size.width * 1.3, height: size.height * 0.5)
+        firstImage.size = CGSize(width: UIScreen.main.bounds.width * 1.2, height: UIScreen.main.bounds.height * 0.5)
         firstImage.position = CGPoint(x: frame.size.width/2, y: frame.size.height/2)
         firstImage.zPosition = -1
         firstImage.zRotation = (.pi/2)

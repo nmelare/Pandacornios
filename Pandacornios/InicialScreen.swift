@@ -115,26 +115,26 @@ class InicialScreen: SKScene {
         hiddenNodeBox.alpha = 0.01
     }
 
-    public func messageSetUp() {
+//    public func messageSetUp() {
 
-        labelNotEndYet.text = "Você ainda não guardou seus jogos na caixa"
-        labelNotEndYet.position = CGPoint(x: self.size.width * 0.5, y: self.size.height * 0.5)
-        labelNotEndYet.fontColor = SKColor.black
-        labelNotEndYet.fontSize = 27
-        labelNotEndYet.zPosition = +1
-        labelNotEndYet.zRotation = (.pi/2)
+//        labelNotEndYet.text = "Você ainda não guardou seus jogos na caixa"
+//        labelNotEndYet.position = CGPoint(x: self.size.width * 0.5, y: self.size.height * 0.5)
+//        labelNotEndYet.fontColor = SKColor.black
+//        labelNotEndYet.fontSize = 27
+//        labelNotEndYet.zPosition = +1
+//        labelNotEndYet.zRotation = (.pi/2)
+//
+//        self.addChild(labelNotEndYet)
 
-        self.addChild(labelNotEndYet)
+//        backgroundFromMessage.color = SKColor.yellow
+//        backgroundFromMessage.size = CGSize(width: 40, height: UIScreen.main.bounds.size.height
+//             - 40)
+//        backgroundFromMessage.position = CGPoint(x: labelNotEndYet.frame.midX, y: labelNotEndYet.frame.midY)
+//        backgroundFromMessage.zPosition = +1
+//
+//        self.addChild(backgroundFromMessage)
 
-        backgroundFromMessage.color = SKColor.yellow
-        backgroundFromMessage.size = CGSize(width: 40, height: UIScreen.main.bounds.size.height
-             - 40)
-        backgroundFromMessage.position = CGPoint(x: labelNotEndYet.frame.midX, y: labelNotEndYet.frame.midY)
-        backgroundFromMessage.zPosition = +1
-
-        self.addChild(backgroundFromMessage)
-
-    }
+//    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else {
@@ -182,7 +182,7 @@ class InicialScreen: SKScene {
         }
 
         if (hiddenNodeBox.contains(location)) {
-            messageSetUp()
+//            messageSetUp()
             
         }
     }
